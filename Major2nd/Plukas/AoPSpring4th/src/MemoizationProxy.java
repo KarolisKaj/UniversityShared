@@ -15,7 +15,7 @@ import java.util.concurrent.ConcurrentMap;
  */
 @Aspect
 public class MemoizationProxy {
-    private static ConcurrentHashMap<Object, ConcurrentHashMap<Object, Object>> _memoizedValues = new ConcurrentHashMap<Object, ConcurrentHashMap<Object, Object>>();
+    private static ConcurrentHashMap<String, ConcurrentHashMap<Object, Object>> _memoizedValues = new ConcurrentHashMap<String, ConcurrentHashMap<Object, Object>>();
 
     @Pointcut("execution(* void (..))")
     private void AnyVoidMethod() {
@@ -29,15 +29,13 @@ public class MemoizationProxy {
     private void OneArgument() {
     }
 
-   // @Around("!AnyVoidMethod() && InDependencies() && OneArgument() && args(value)")
- //   public void GenericMemoizationMethod(Object value, ProceedingJoinPoint pjp){
-  ///      System.out.println("asdasd");
-  //  }
 
 
-    //@Around("AnyVoidMethod() && InDependencies() && OneArgument() && args(value)")
-    public Object GenericMemoizationMethod(Object value, ProceedingJoinPoint pjp) throws Throwable {
-        Signature signature = pjp.getSignature();
+
+    @Around("!AnyVoidMethod() && InDependencies() && OneArgument()")
+    public Object GenericMemoizationMethod(ProceedingJoinPoint pjp) throws Throwable {
+        Object value = pjp.getArgs()[0];
+        String signature = pjp.getSignature().toString();
         if (_memoizedValues.containsKey(signature)) {
             ConcurrentHashMap _innerMap = _memoizedValues.get(signature);
             if (_innerMap.containsKey(value))
