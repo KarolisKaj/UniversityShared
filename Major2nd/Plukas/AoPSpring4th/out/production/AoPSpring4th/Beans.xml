@@ -1,0 +1,30 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/aop
+   http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">
+
+    <aop:aspectj-autoproxy/>
+
+    <bean id="localLogger" class="LocalLogger" factory-method="createLogger" scope="singleton"/>
+    <bean id="circus" class="Dependencies.Circus"/>
+    <bean id="transaction" class="Dependencies.Transaction"/>
+    <bean class="Dependencies.CircusFactory"/>
+
+    <!-- Definition for logging aspect 1st -->
+    <bean class="LoggerProxy">
+        <constructor-arg ref="localLogger"/>
+    </bean>
+
+    <!-- Definition for logging aspect 2nd -->
+    <bean class="TransactionValidation"/>
+
+    <bean id="deepLearning" class="Dependencies.DeepLearning"/>
+
+    <!-- Definition for logging aspect 3rd -->
+    <bean class="MemoizationProxy"/>
+
+</beans>
