@@ -11,7 +11,6 @@ namespace RoslynFun.Factory
         public PrintExtensionFactory(string className)
         {
             _printType = Type.GetType(className).GeneratePrintType(typeof(IPrintable));
-            //var typeBuilder = new TypeBuilder(,);
         }
 
         public IPrintable GetInstance()

@@ -116,6 +116,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompilerExtensions\GeneratePrintType.cs" />
+    <Compile Include="Dependencies\AnotherMemberFullClass.cs" />
     <Compile Include="Dependencies\MemberfulClass.cs" />
     <Compile Include="Factory\IPrintable.cs" />
     <Compile Include="Factory\PrintExtensionFactory.cs" />

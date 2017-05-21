@@ -14,7 +14,10 @@ namespace RoslynFun
         static void Main(string[] args)
         {
             var factory = new PrintExtensionFactory(typeof(MemberfulClass).FullName);
+            var factoryother = new PrintExtensionFactory(typeof(AnotherMemberFullClass).FullName);
             factory.GetInstance().Print();
+            Console.WriteLine();
+            factoryother.GetInstance().Print();
 
             Console.Read();
         }
