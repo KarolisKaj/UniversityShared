@@ -17,13 +17,6 @@ namespace RoslynFun.Factory
         public IPrintable GetInstance()
         {
             return (IPrintable)Activator.CreateInstance(_printType);
-            //_printType.InvokeMember("Write",
-            //    BindingFlags.Default | BindingFlags.InvokeMethod,
-            //    null,
-            //    obj,
-            //    new object[] { "Hello World" });
-
-            return (IPrintable)_printType.GetConstructor(new Type[0]).Invoke(new object[0]);
 
         }
     }
