@@ -7,7 +7,6 @@ import LocalConfigs.Bootstrapper;
  */
 public class EntryPoint {
     public static void main(String[] args) {
-        System.out.println("There we go");
         Bootstrapper bootstrapper = new Bootstrapper();
         bootstrapper.Start();
     }

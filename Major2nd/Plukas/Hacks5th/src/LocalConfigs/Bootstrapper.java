@@ -21,7 +21,7 @@ public class Bootstrapper {
         }
         System.out.println("//------CONTAINER CONTENT END---------");
 
-        
+
         // First assignment in 5th Lab.
         IExample example = ((IExample) ctx.getBean("example"));
         System.out.println(((ICountable)example).getCount());
@@ -30,8 +30,5 @@ public class Bootstrapper {
         example.ThirdMethod();
         example.FourthMethod("Karolis", 1);
         System.out.println(((ICountable)example).getCount());
-
-
-
     }
 }
