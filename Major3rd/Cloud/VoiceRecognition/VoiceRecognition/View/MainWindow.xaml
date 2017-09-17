@@ -3,9 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="VoiceRecognition.View"
+        xmlns:local="clr-namespace:VoiceRecognition.View"
         mc:Ignorable="d"
-        Title="Voice Recognition" Height="250" Width="700" ResizeMode="CanMinimize">
+        Title="Voice Recognition" Height="250" Width="700">
     <Grid>
         <ItemsControl ItemsSource="{Binding Providers}">
             <ItemsControl.ItemTemplate>
@@ -13,6 +13,11 @@
                     <local:VoiceServiceProviderControl/>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
         </ItemsControl>
     </Grid>
 </Window>

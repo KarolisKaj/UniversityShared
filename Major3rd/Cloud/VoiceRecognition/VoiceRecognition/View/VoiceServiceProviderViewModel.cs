@@ -13,8 +13,7 @@ namespace VoiceRecognition.View
             set { _providerImagePath = value; OnPropertyChanged(); }
         }
 
-        public ICommand SendCommand { get; set; }
-        public ICommand AnalyzeReportCommand { get; set; }
+        public ICommand EvaluateCommand { get; set; }
 
         private void OnPropertyChanged([CallerMemberName]string name = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         public event PropertyChangedEventHandler PropertyChanged;

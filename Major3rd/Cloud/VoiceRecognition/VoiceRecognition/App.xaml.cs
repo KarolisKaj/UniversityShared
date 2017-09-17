@@ -17,7 +17,16 @@ namespace VoiceRecognition
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
+            SetupMVVMP();
+        }
+
+        private void SetupMVVMP()
+        {
+
+            var vm = new MainViewModel();
+            var presenter = new MainPresenter(vm);
             var view = new MainWindow();
+            view.DataContext = vm;
             view.Show();
         }
     }
