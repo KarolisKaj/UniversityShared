@@ -9,9 +9,9 @@ using System.Windows;
 [assembly: AssemblyDescription("Cloud provider voice recognition testing.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Karolis Kajėnas")]
-[assembly: AssemblyProduct("VoiceRecognition")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
-[assembly: AssemblyTrademark("KarolisKajenas")]
+[assembly: AssemblyProduct("Voice Recognition")]
+[assembly: AssemblyCopyright("Copyright © Karolis Kajėnas 2017")]
+[assembly: AssemblyTrademark("Karolis Kajėnas")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
