@@ -16,7 +16,7 @@ namespace VoiceRecognition.Extensions
         {
             get
             {
-                var path = Path.GetFullPath(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\..\..\..\..\")) + "WordsRecording.mp5";
+                var path = Path.GetFullPath(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\..\..\..\..\")) + "WordsRecording.mp3";
                 return File.Exists(path) ? path : null;
             }
         }

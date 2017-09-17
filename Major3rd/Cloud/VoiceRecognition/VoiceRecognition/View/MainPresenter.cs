@@ -1,7 +1,6 @@
 ﻿using System;
 using VoiceRecognition.Extensions;
 using VoiceRecognition.Services;
-using VoiceRecognition.Values;
 using VoiceRecognition.View.ViewElements;
 
 namespace VoiceRecognition.View

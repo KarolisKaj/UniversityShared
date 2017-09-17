@@ -4,8 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:VoiceRecognition.View"
+             xmlns:elements="clr-namespace:VoiceRecognition.View.ViewElements"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <elements:TextToColorConverter x:Key="textToColorConverter"/>
+        <elements:TextToFullSyntaxConverter x:Key="textToFullSyntaxConverter"/>
+    </UserControl.Resources>
     <Border BorderThickness="1" BorderBrush="Black" Margin="5">
         <Grid>
             <Grid.RowDefinitions>
@@ -35,6 +40,14 @@
                         </Style>
                     </Button.Style>
                 </Button>
+                <TextBlock Grid.Row="1" 
+                           FontSize="18" 
+                           VerticalAlignment="Top" 
+                           FontWeight="Bold" 
+                           HorizontalAlignment="Center" 
+                           Text="{Binding ErrorCount, Converter={StaticResource textToFullSyntaxConverter}}"
+                           Foreground="{Binding ErrorCount, Converter={StaticResource textToColorConverter}}">
+                </TextBlock>
             </Grid>
         </Grid>
     </Border>

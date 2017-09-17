@@ -86,6 +86,8 @@
     <Compile Include="View\MainViewModel.cs" />
     <Compile Include="View\ViewElements\BasicCommand.cs" />
     <Compile Include="View\ViewElements\ObservableViewModel.cs" />
+    <Compile Include="View\ViewElements\TextToColorConverter.cs" />
+    <Compile Include="View\ViewElements\TextToFullSyntaxConverter.cs" />
     <Compile Include="View\VoiceServiceProviderControl.xaml.cs">
       <DependentUpon>VoiceServiceProviderControl.xaml</DependentUpon>
     </Compile>

@@ -15,11 +15,17 @@ namespace VoiceRecognition.View
 
 
         private bool _isRequestInProgress;
-
         public bool IsRequestInProgress
         {
             get { return _isRequestInProgress; }
             set { _isRequestInProgress = value; OnPropertyChanged(); }
+        }
+
+        private int? _errorCount ;
+        public int? ErrorCount
+        {
+            get { return _errorCount; }
+            set { _errorCount = value; OnPropertyChanged(); }
         }
 
 
