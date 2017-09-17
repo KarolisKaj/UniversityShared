@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
+using VoiceRecognition.View.ViewElements;
 
 namespace VoiceRecognition.View
 {
-    public class VoiceServiceProviderViewModel : INotifyPropertyChanged
+    public class VoiceServiceProviderViewModel : ObservableViewModel
     {
         private string _providerImagePath;
         public string ProviderImagePath
@@ -15,7 +16,6 @@ namespace VoiceRecognition.View
 
         public ICommand EvaluateCommand { get; set; }
 
-        private void OnPropertyChanged([CallerMemberName]string name = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        public event PropertyChangedEventHandler PropertyChanged;
+
     }
 }

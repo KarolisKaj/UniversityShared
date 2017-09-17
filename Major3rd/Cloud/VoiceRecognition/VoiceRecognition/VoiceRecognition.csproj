@@ -73,6 +73,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Extensions\DefaultProvider.cs" />
     <Compile Include="Extensions\Mapper.cs" />
     <Compile Include="Services\Amazon\AmazonProvider.cs" />
     <Compile Include="Services\Azure\AzureProvider.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="View\MainPresenter.cs" />
     <Compile Include="View\MainViewModel.cs" />
     <Compile Include="View\ViewElements\BasicCommand.cs" />
+    <Compile Include="View\ViewElements\ObservableViewModel.cs" />
     <Compile Include="View\VoiceServiceProviderControl.xaml.cs">
       <DependentUpon>VoiceServiceProviderControl.xaml</DependentUpon>
     </Compile>

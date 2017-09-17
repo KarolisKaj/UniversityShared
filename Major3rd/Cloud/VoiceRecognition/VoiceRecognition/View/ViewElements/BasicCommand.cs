@@ -13,6 +13,10 @@
             _execute = execute;
         }
 
+        public BasicCommand(Action execute) : this(() => true, execute)
+        {
+        }
+
         public event EventHandler CanExecuteChanged;
 
         public bool CanExecute(object parameter)
