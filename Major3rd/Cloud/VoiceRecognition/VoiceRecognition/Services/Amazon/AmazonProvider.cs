@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace VoiceRecognition.Services.Amazon
 {
-    class AmazonProvider : IProvider
+    public class AmazonProvider : IProvider
     {
+        public Task<string> TextFromAudioSample(string audioPath)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace VoiceRecognition.Services.Azure
 {
-    class AzureProvider
+   public class AzureProvider : IProvider
     {
+        public Task<string> TextFromAudioSample(string audioPath)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
