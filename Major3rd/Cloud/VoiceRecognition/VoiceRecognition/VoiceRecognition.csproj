@@ -79,6 +79,7 @@
     <Compile Include="Services\Azure\AzureProvider.cs" />
     <Compile Include="Services\Google\GoogleProvider.cs" />
     <Compile Include="Services\IProvider.cs" />
+    <Compile Include="Services\ServiceModel.cs" />
     <Compile Include="Services\ServiceProvider.cs" />
     <Compile Include="Values\Provider.cs" />
     <Compile Include="View\MainPresenter.cs" />

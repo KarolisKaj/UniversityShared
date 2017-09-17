@@ -16,9 +16,12 @@
         public BasicCommand(Action execute) : this(() => true, execute)
         {
         }
-
         public event EventHandler CanExecuteChanged;
 
+        public void RaiseCanExecute()
+        {
+            CanExecuteChanged?.Invoke(this, null);
+        }
         public bool CanExecute(object parameter)
         {
             return _canExecute();

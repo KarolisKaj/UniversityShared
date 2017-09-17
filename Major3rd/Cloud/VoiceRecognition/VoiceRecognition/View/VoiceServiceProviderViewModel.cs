@@ -1,7 +1,4 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Windows.Input;
-using VoiceRecognition.View.ViewElements;
+﻿using VoiceRecognition.View.ViewElements;
 
 namespace VoiceRecognition.View
 {
@@ -14,7 +11,17 @@ namespace VoiceRecognition.View
             set { _providerImagePath = value; OnPropertyChanged(); }
         }
 
-        public ICommand EvaluateCommand { get; set; }
+        public BasicCommand EvaluateCommand { get; set; }
+
+
+        private bool _isRequestInProgress;
+
+        public bool IsRequestInProgress
+        {
+            get { return _isRequestInProgress; }
+            set { _isRequestInProgress = value; OnPropertyChanged(); }
+        }
+
 
 
     }

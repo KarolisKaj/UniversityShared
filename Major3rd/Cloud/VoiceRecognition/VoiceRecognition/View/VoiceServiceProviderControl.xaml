@@ -21,7 +21,20 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Button Margin="5,0,5,5" Content="Evaluate" Command="{Binding EvaluateCommand}"/>
+                <Button Margin="5,0,5,5" Command="{Binding EvaluateCommand}">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsRequestInProgress}" Value="True">
+                                    <Setter Property="Content" Value="Working..." />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsRequestInProgress}" Value="False">
+                                    <Setter Property="Content" Value="Evaluate" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
             </Grid>
         </Grid>
     </Border>

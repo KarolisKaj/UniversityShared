@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace VoiceRecognition.Services.Amazon
@@ -10,7 +7,7 @@ namespace VoiceRecognition.Services.Amazon
     {
         public Task<string> TextFromAudioSample(string audioPath)
         {
-            throw new NotImplementedException();
+            return Task.Delay(2000).ContinueWith(x => "");
         }
     }
 }

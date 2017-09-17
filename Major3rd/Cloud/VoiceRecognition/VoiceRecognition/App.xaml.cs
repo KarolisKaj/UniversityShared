@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
+using VoiceRecognition.Services;
 using VoiceRecognition.View;
 
 namespace VoiceRecognition
@@ -22,9 +17,9 @@ namespace VoiceRecognition
 
         private void SetupMVVMP()
         {
-
             var vm = new MainViewModel();
-            var presenter = new MainPresenter(vm);
+
+            var presenter = new MainPresenter(vm, new ServiceProvider());
             var view = new MainWindow();
             view.DataContext = vm;
             view.Show();
