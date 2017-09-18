@@ -6,13 +6,10 @@
         xmlns:local="clr-namespace:VoiceRecognition.View"
         mc:Ignorable="d"
         Title="Voice Recognition" Height="200" Width="1000">
-    <Window.Background>
-        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-            <GradientStop Color="White" Offset="0.1" />
-            <GradientStop Color="#FF5078FF" Offset="1.0" />
-        </LinearGradientBrush>
-    </Window.Background>
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/Background.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>

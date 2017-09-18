@@ -4,6 +4,8 @@ namespace VoiceRecognition.Extensions
 {
     public static class DefaultProvider
     {
+
+        // TODO: perform lookup on relative dir for files with extension.
         public static string DefaultResultFilePath
         {
             get
@@ -12,6 +14,7 @@ namespace VoiceRecognition.Extensions
                 return File.Exists(path) ? path : null;
             }
         }
+        // TODO: perform lookup on relative dir for files with extension.
         public static string DefaultAudioFilePath
         {
             get
