@@ -51,8 +51,8 @@ namespace VoiceRecognition.View
             _vm.AudioPathCommand = new BasicCommand(() =>
             {
                 Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-                dlg.DefaultExt = ".mp3";
-                dlg.Filter = "MP3 Files (*.mp3)|*.mp3";
+                dlg.DefaultExt = ".flac";
+                dlg.Filter = "FLAC Files (*.flac)|*.flac";
                 var result = dlg.ShowDialog();
 
                 if (result.HasValue && result.Value)

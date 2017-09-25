@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Configuration;
+using System.IO;
 
 namespace VoiceRecognition.Extensions
 {
@@ -10,7 +11,7 @@ namespace VoiceRecognition.Extensions
         {
             get
             {
-                var path = Path.GetFullPath(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\..\..\..\..\")) + "1000RandomWords.txt";
+                var path = Path.GetFullPath(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, ConfigurationManager.AppSettings["defaultWordPath"]));
                 return File.Exists(path) ? path : null;
             }
         }
@@ -19,7 +20,7 @@ namespace VoiceRecognition.Extensions
         {
             get
             {
-                var path = Path.GetFullPath(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\..\..\..\..\")) + "WordsRecording.mp3";
+                var path = Path.GetFullPath(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, ConfigurationManager.AppSettings["defaultAudioPath"]));
                 return File.Exists(path) ? path : null;
             }
         }
