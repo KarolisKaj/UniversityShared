@@ -97,6 +97,9 @@
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="SpeechClient, Version=0.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\Microsoft.ProjectOxford.SpeechRecognition-x86.1.0.0.6\lib\SpeechClient.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Configuration" />
@@ -147,6 +150,7 @@
     <Compile Include="Extensions\TextRecognitionHelper.cs" />
     <Compile Include="Services\Amazon\AmazonProvider.cs" />
     <Compile Include="Services\Azure\AzureProvider.cs" />
+    <Compile Include="Services\Azure\CredentialProvider.cs" />
     <Compile Include="Services\Google\CredentialProvider.cs" />
     <Compile Include="Services\Google\GoogleProvider.cs" />
     <Compile Include="Services\IProvider.cs" />
@@ -198,7 +202,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

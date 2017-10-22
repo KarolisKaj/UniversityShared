@@ -6,12 +6,16 @@
     using Grpc.Core;
     using System.Linq;
 
-    public class GoogleProvider : IProvider
+    public class AzureProvider : IProvider
     {
         private readonly Channel _channel;
-        public GoogleProvider()
+        public AzureProvider()
         {
             _channel = new CredentialProvider().Create(DefaultProvider.DefaultGoogleAuthFilePath);
+        }
+
+        public void Dispose()
+        {
         }
 
         public Task<string> TextFromAudioSample(string audioPath)
@@ -24,7 +28,6 @@
                 var speech = SpeechClient.Create(_channel);
                 var response = speech.Recognize(new RecognitionConfig()
                 {
-                    Encoding = RecognitionConfig.Types.AudioEncoding.Flac,
                     LanguageCode = "en",
                 }, RecognitionAudio.FromFile(audioPath));
                 return response.Results.Single().Alternatives.Single().Transcript;
