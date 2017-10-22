@@ -1,5 +1,4 @@
-﻿using System.Reflection;
-using VoiceRecognition.Values;
+﻿using VoiceRecognition.Values;
 using System;
 
 namespace VoiceRecognition.Extensions

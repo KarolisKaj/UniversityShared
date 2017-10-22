@@ -23,5 +23,12 @@
             get { return _resultPath; }
             set { _resultPath = value; OnPropertyChanged(); }
         }
+        private string _errorText;
+        public string ErrorText
+        {
+            get { return _errorText; }
+            set { _errorText = value; OnPropertyChanged(); }
+        }
+        
     }
 }

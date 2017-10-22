@@ -8,8 +8,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
-        <elements:TextToColorConverter x:Key="textToColorConverter"/>
         <elements:TextToFullSyntaxConverter x:Key="textToFullSyntaxConverter"/>
+        <elements:TextToColorConverter x:Key="textToColorConverter"/>
     </UserControl.Resources>
     <Border BorderThickness="1" BorderBrush="Black" Margin="5">
         <Grid>

@@ -31,6 +31,8 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="5"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -62,6 +64,7 @@
                 <TextBox Background="Transparent" Foreground="White" Grid.Row="1" IsReadOnly="True" Text="{Binding ResultPath}" />
                 <Button Grid.Row="1" Grid.Column="2" Width="30" Content="..." HorizontalContentAlignment="Center" Command="{Binding ResultPathCommand}" />
             </Grid>
+            <TextBlock Grid.Row="4" Text="{Binding ErrorText}" Foreground="Red"/>
         </Grid>
     </Grid>
 </Window>

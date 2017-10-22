@@ -5,7 +5,6 @@ namespace VoiceRecognition.Extensions
 {
     public static class DefaultProvider
     {
-
         // TODO: perform lookup on relative dir for files with extension.
         public static string DefaultResultFilePath
         {
@@ -24,5 +23,7 @@ namespace VoiceRecognition.Extensions
                 return File.Exists(path) ? path : null;
             }
         }
+
+        public static string DefaultGoogleAuthFilePath => ConfigurationManager.AppSettings["defaultGoogleAuthPath"];
     }
 }

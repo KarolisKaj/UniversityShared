@@ -33,14 +33,7 @@ namespace VoiceRecognition.View
                 var providerVM = new VoiceServiceProviderViewModel() { ProviderImagePath = provider.ProviderType.ProviderToImageUrl() };
                 providerVM.EvaluateCommand = new BasicCommand(
                             () => !String.IsNullOrWhiteSpace(_vm.AudioPath) && !providerVM.IsRequestInProgress,
-                            async () =>
-                            {
-                                providerVM.IsRequestInProgress = true;
-                                CheckCanExecute();
-                                var results = await provider.Provider.TextFromAudioSample(_vm.AudioPath);
-                                providerVM.IsRequestInProgress = false;
-                                CheckCanExecute();
-                            });
+                            () => ExecuteAudioToText(providerVM, provider));
 
                 _vm.Providers.Add(providerVM);
             }
@@ -83,5 +76,21 @@ namespace VoiceRecognition.View
                 command.EvaluateCommand.RaiseCanExecute();
         }
 
+        private async void ExecuteAudioToText(VoiceServiceProviderViewModel providerVM, ServiceModel provider)
+        {
+            try
+            {
+                providerVM.IsRequestInProgress = true;
+                CheckCanExecute();
+                var results = await provider.Provider.TextFromAudioSample(_vm.AudioPath);
+                providerVM.ErrorCount = _vm.ResultPath.GetFileContent().GetMismatches(results);
+                providerVM.IsRequestInProgress = false;
+                CheckCanExecute();
+            }
+            catch (Exception ex)
+            {
+                _vm.ErrorText = ex.Message;
+            }
+        }
     }
 }

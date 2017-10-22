@@ -1,6 +1,7 @@
 ﻿using Google.Apis.Auth.OAuth2;
-using Google.Apis.Services;
-using System.Threading.Tasks;
+using Google.Cloud.Speech.V1;
+using Grpc.Auth;
+using Grpc.Core;
 
 namespace VoiceRecognition.Services.Google
 {
@@ -8,18 +9,13 @@ namespace VoiceRecognition.Services.Google
     {
         public CredentialProvider()
         {
-          
+
         }
 
-        public async Task<GoogleCredential> Create()
+        public Channel Create(string authFilePath)
         {
-            GoogleCredential credential = await GoogleCredential.GetApplicationDefaultAsync();
-            return credential;
-            //var compute = new ComputeService(new BaseClientService.Initializer()
-            //{
-            //    HttpClientInitializer = credential
-            //});
-        
+            GoogleCredential googleCredential = GoogleCredential.FromFile(authFilePath);
+            return new Channel(SpeechClient.DefaultEndpoint.Host, googleCredential.ToChannelCredentials());
         }
     }
 }
