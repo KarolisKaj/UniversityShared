@@ -27,7 +27,6 @@ namespace VoiceRecognition.Services.SpeechMatics
 
         public async Task<string> TextFromAudioSample(string audioPath)
         {
-            //audioPath = "C:\\Users\\WarHorse\\SourceControl\\UniversityShared\\Major3rd\\Cloud\\zero.wav";
             var sb = new StringBuilder();
 
             using (var requestContent = new MultipartFormDataContent())
@@ -85,7 +84,6 @@ namespace VoiceRecognition.Services.SpeechMatics
         private async Task<string> ObtainText(string id)
         {
             var uri = UriForTranscriptId(id);
-            //var uri = UriForTranscriptId("5214072");
             var response = await _client.Value.GetAsync(uri);
             using (HttpContent responseContent = response.Content)
             {
