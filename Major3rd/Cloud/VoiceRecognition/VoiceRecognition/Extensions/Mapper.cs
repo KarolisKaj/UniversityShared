@@ -14,8 +14,8 @@ namespace VoiceRecognition.Extensions
             {
                 case Provider.Google:
                     return baseUrl + "Google.png";
-                case Provider.Amazon:
-                    return baseUrl + "Amazon.png";
+                case Provider.SpeechMatics:
+                    return baseUrl + "SpeechMatics.png";
                 case Provider.Azure:
                     return baseUrl + "MSAzure.png";
                 default:

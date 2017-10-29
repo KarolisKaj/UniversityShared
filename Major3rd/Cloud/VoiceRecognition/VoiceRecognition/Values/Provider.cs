@@ -3,7 +3,7 @@
     public enum Provider
     {
         Google,
-        Amazon,
+        SpeechMatics,
         Azure
     }
 }

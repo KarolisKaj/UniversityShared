@@ -148,7 +148,8 @@
     <Compile Include="Extensions\DefaultProvider.cs" />
     <Compile Include="Extensions\Mapper.cs" />
     <Compile Include="Extensions\TextRecognitionHelper.cs" />
-    <Compile Include="Services\Amazon\AmazonProvider.cs" />
+    <Compile Include="Services\SpeechMatics\CredentialsProvider.cs" />
+    <Compile Include="Services\SpeechMatics\SpeechMaticsProvider.cs" />
     <Compile Include="Services\Azure\AzureProvider.cs" />
     <Compile Include="Services\Azure\CredentialProvider.cs" />
     <Compile Include="Services\Google\CredentialProvider.cs" />
@@ -235,6 +236,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SpeechMatics.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Grpc.Core.1.6.1\build\net45\Grpc.Core.targets" Condition="Exists('..\packages\Grpc.Core.1.6.1\build\net45\Grpc.Core.targets')" />

@@ -6,10 +6,10 @@
     using Grpc.Core;
     using System.Linq;
 
-    public class AzureProvider : IProvider
+    public class GoogleProvider : IProvider
     {
         private readonly Channel _channel;
-        public AzureProvider()
+        public GoogleProvider()
         {
             _channel = new CredentialProvider().Create(DefaultProvider.DefaultGoogleAuthFilePath);
         }

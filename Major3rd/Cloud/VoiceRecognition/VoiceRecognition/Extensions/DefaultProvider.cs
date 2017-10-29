@@ -26,6 +26,6 @@ namespace VoiceRecognition.Extensions
 
         public static string DefaultGoogleAuthFilePath => ConfigurationManager.AppSettings["defaultGoogleAuthPath"];
         public static string DefaultAzureAuthFilePath => ConfigurationManager.AppSettings["defaultAzureAuthPath"];
-        public static string DefaultAmazonAuthFilePath => ConfigurationManager.AppSettings["defaultAmazonAuthPath"];
+        public static string DefaultSpeechMaticsAuthFilePath => ConfigurationManager.AppSettings["defaultSpeechMaticsAuthPath"];
     }
 }
