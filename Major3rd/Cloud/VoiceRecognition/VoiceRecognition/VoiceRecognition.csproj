@@ -227,7 +227,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Amazon.png" />
     <Resource Include="Resources\Google.png" />
     <Resource Include="Resources\MSAzure.png" />
   </ItemGroup>
