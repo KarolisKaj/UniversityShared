@@ -12,7 +12,7 @@ namespace VoiceRecognition.Services.Azure
     {
         private readonly Lazy<DataRecognitionClient> _speech;
         private ManualResetEvent _signal = new ManualResetEvent(false);
-        private string floatingResult = "";
+        private string floatingResult;
         public AzureProvider()
         {
             _speech = new Lazy<DataRecognitionClient>(() => SpeechRecognitionServiceFactory.CreateDataClient(
@@ -29,6 +29,7 @@ namespace VoiceRecognition.Services.Azure
 
         public Task<string> TextFromAudioSample(string audioPath)
         {
+            floatingResult = "";
             return Task.Run(() =>
             {
                 _signal.Reset();
@@ -51,7 +52,7 @@ namespace VoiceRecognition.Services.Azure
         {
             if (e.PhraseResponse.RecognitionStatus == RecognitionStatus.RecognitionSuccess)
             {
-                floatingResult = e.PhraseResponse.Results.OrderBy(x => x.Confidence == Confidence.High).First().DisplayText;
+                floatingResult = e.PhraseResponse.Results.OrderByDescending(x => (int)x.Confidence).First().DisplayText;
             }
             _signal.Set();
         }
