@@ -8,8 +8,8 @@ namespace VoiceRecognition.Extensions
     {
         public static int GetMismatches(this string correct, string recognized)
         {
-            var correctWords = new HashSet<string>(correct.Split(new[] { Environment.NewLine, " " }, StringSplitOptions.RemoveEmptyEntries), StringComparer.OrdinalIgnoreCase);
-            var recognizedWords = recognized.Split(new[] { Environment.NewLine, " " }, StringSplitOptions.RemoveEmptyEntries);
+            var correctWords = new HashSet<string>(correct.Split(new[] { Environment.NewLine, " ", ".", "," }, StringSplitOptions.RemoveEmptyEntries), StringComparer.OrdinalIgnoreCase);
+            var recognizedWords = recognized.Split(new[] { Environment.NewLine, " ", ".", "," }, StringSplitOptions.RemoveEmptyEntries);
             correctWords.ExceptWith(recognizedWords);
             return correctWords.Count;
         }
