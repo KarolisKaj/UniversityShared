@@ -8,8 +8,8 @@ namespace VoiceRecognition.View.ViewElements
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var actualValue = value as int?;
-            return actualValue.HasValue ? $"Error count : {actualValue.Value}" : null;
+            var actualValue = value as Result;
+            return actualValue != null ? $"Error count : {actualValue.ErrorEntries.Value} / {actualValue.TotalEntries.Value}" : null;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VoiceRecognition.View"
         mc:Ignorable="d"
-        Title="Voice Recognition" Height="200" Width="1000">
+        Title="Voice Recognition" Height="220" Width="1050">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Resources/Background.jpg" Stretch="UniformToFill" Opacity="0.6"/>

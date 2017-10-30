@@ -24,6 +24,9 @@
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Button Margin="5,0,5,5" Command="{Binding EvaluateCommand}">
@@ -45,8 +48,37 @@
                            VerticalAlignment="Top" 
                            FontWeight="Bold" 
                            HorizontalAlignment="Center" 
-                           Text="{Binding ErrorCount, Converter={StaticResource textToFullSyntaxConverter}}"
-                           Foreground="{Binding ErrorCount, Converter={StaticResource textToColorConverter}}">
+                           Text="{Binding Result, Converter={StaticResource textToFullSyntaxConverter}}"
+                           Foreground="{Binding Result, Converter={StaticResource textToColorConverter}}">
+                </TextBlock>
+                <TextBlock Grid.Row="3" 
+                           FontSize="18" 
+                           VerticalAlignment="Top" 
+                           FontWeight="Bold" 
+                           HorizontalAlignment="Center">
+                    <Run Text="Error rate - " >
+                        <Run.Style>
+                            <Style TargetType="Run">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Result.ErrorPercentage}" Value="{x:Null}">
+                                    <Setter Property="Foreground" Value="Transparent" />
+                                </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Run.Style>
+                    </Run>
+                    <Run Text="{Binding Result.ErrorPercentage, StringFormat={}{0:0.00}}" />
+                    <Run Text="%">
+                        <Run.Style>
+                            <Style TargetType="Run">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Result.ErrorPercentage}" Value="{x:Null}">
+                                    <Setter Property="Foreground" Value="Transparent" />
+                                </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Run.Style>
+                    </Run>
                 </TextBlock>
             </Grid>
         </Grid>

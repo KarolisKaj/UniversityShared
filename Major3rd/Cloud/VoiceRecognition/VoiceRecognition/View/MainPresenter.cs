@@ -83,7 +83,7 @@ namespace VoiceRecognition.View
                 providerVM.IsRequestInProgress = true;
                 CheckCanExecute();
                 var results = await provider.Provider.TextFromAudioSample(_vm.AudioPath);
-                providerVM.ErrorCount = _vm.ResultPath.GetFileContent().GetMismatches(results);
+                providerVM.Result = _vm.ResultPath.GetFileContent().CalculateResult(results);
                 providerVM.IsRequestInProgress = false;
                 CheckCanExecute();
             }
