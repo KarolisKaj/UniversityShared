@@ -47,6 +47,7 @@
                            HorizontalAlignment="Center" 
                            Text="{Binding ErrorCount, Converter={StaticResource textToFullSyntaxConverter}}"
                            Foreground="{Binding ErrorCount, Converter={StaticResource textToColorConverter}}">
+                    
                 </TextBlock>
             </Grid>
         </Grid>

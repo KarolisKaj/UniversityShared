@@ -21,14 +21,37 @@ namespace VoiceRecognition.View
             set { _isRequestInProgress = value; OnPropertyChanged(); }
         }
 
-        private int? _errorCount ;
+        private Result _result;
+        public Result Result
+        {
+            get { return _result; }
+            set { _result = value; OnPropertyChanged(); }
+        }
+
+
+    }
+    public class Result : ObservableViewModel
+    {
+
+        private int? _errorCount;
         public int? ErrorCount
         {
             get { return _errorCount; }
             set { _errorCount = value; OnPropertyChanged(); }
         }
 
+        private int? _totalCount;
+        public int? TotalCount
+        {
+            get { return _totalCount; }
+            set { _totalCount = value; OnPropertyChanged(); }
+        }
 
-
+        private double? _percentage;
+        public double? Percentage
+        {
+            get { return _percentage; }
+            set { _percentage = value; OnPropertyChanged(); }
+        }
     }
 }
