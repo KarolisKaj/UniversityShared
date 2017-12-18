@@ -24,6 +24,14 @@
   <ItemGroup>
     <Compile Include="MapReduce.py" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Systems.Diagrams\" />
+    <Folder Include="Systems.Diagrams\MapReduce\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Systems.Diagrams\MapReduce\MapReduce.svg" />
+    <Content Include="Systems.Diagrams\MapReduce\MapReduce.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
        Visual Studio and specify your pre- and post-build commands in
