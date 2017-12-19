@@ -1,7 +1,17 @@
-#!/usr/bin/python3
 import simpy
 import matplotlib
 from matplotlib import pyplot as plt
+
+class Monitor(object):
+    def __init__(self, env, store):
+        self.env = env
+        self.store = store
+        self.message_count = []
+
+    def start_monitoring(self):
+        while True:
+            self.message_count.append(len(self.store.items))
+            yield env.timeout(1)
 
 class Component(object):
     def __init__(self, env, store):
@@ -39,28 +49,25 @@ class Receiver(object):
 
 env = simpy.Environment()
 store = simpy.Store(env)
+monitor = Monitor(env, store)
 
 publication = Publication(env, store)
-component1 = Component(env, store)
-component2 = Component(env, store)
-component3 = Component(env, store)
-component4 = Component(env, store)
-component5 = Component(env, store)
-component6 = Component(env, store)
 receiver = Receiver(env)
 
+env.process(monitor.start_monitoring())
+
 env.process(publication.start_publishing())
-env.process(component1.start_processing_messages())
-env.process(component2.start_processing_messages())
-env.process(component3.start_processing_messages())
-env.process(component4.start_processing_messages())
-#env.process(component5.start_processing_messages())
-#env.process(component6.start_processing_messages())
+for i in range(3):
+    env.process(Component(env, store).start_processing_messages())
 env.process(receiver.start_receiving())
 
 env.run(until=100)
 
-print('%s' % len(store.items))
+p1, = plt.plot(monitor.message_count)
+plt.legend ([p1], ['Unprocessed messages'], loc='upper left')
+
+plt.show()
+
 
 #p1, = plt.plot(monitor.jobstats)
 #p2, = plt.plot(monitor.rejectedstats)
