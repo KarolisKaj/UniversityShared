@@ -37,7 +37,7 @@ class Receiver(object):
             received_handle_duration = 3
             yield env.timeout(received_handle_duration)
 
-env = simpy.Environment(100)
+env = simpy.Environment()
 store = simpy.Store(env)
 
 publication = Publication(env, store)
@@ -54,14 +54,13 @@ env.process(component1.start_processing_messages())
 env.process(component2.start_processing_messages())
 env.process(component3.start_processing_messages())
 env.process(component4.start_processing_messages())
-env.process(component5.start_processing_messages())
-env.process(component6.start_processing_messages())
+#env.process(component5.start_processing_messages())
+#env.process(component6.start_processing_messages())
 env.process(receiver.start_receiving())
 
-env.run(until=500)
+env.run(until=100)
 
-
-print('%s' % store.items)
+print('%s' % len(store.items))
 
 #p1, = plt.plot(monitor.jobstats)
 #p2, = plt.plot(monitor.rejectedstats)
