@@ -21,13 +21,16 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Extensions\DelayExtensions.py" />
     <Compile Include="MapReduce.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Extensions\" />
     <Folder Include="Systems.Diagrams\" />
     <Folder Include="Systems.Diagrams\MapReduce\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="requirements.txt" />
     <Content Include="Systems.Diagrams\MapReduce\MapReduce.svg" />
     <Content Include="Systems.Diagrams\MapReduce\MapReduce.txt" />
   </ItemGroup>

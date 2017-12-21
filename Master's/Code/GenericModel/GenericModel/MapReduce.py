@@ -1,6 +1,15 @@
 import simpy
 import matplotlib
 from matplotlib import pyplot as plt
+import random
+import random
+
+def latency(env, latency_duration):
+    return env.timeout(latency_duration)
+
+def rand_latency(env, min, max):
+    latency_duration = random.randint(min, max)
+    return latency(env,latency_duration)
 
 class Monitor(object):
     def __init__(self, env, store):
@@ -11,7 +20,7 @@ class Monitor(object):
     def start_monitoring(self):
         while True:
             self.message_count.append(len(self.store.items))
-            yield env.timeout(1)
+            yield env.timeout(10)
 
 class Component(object):
     def __init__(self, env, store):
@@ -20,10 +29,11 @@ class Component(object):
 
     def start_processing_messages(self):
         while True:
-            process_duration = 5
+            process_duration = 40
             message = store.get()
             print('Proccesed %s @ %d ' % (message, env.now))
             yield env.timeout(process_duration)
+            yield rand_latency(env, 20,40)
 
 class Publication(object):
     def __init__(self, env, store):
@@ -32,10 +42,9 @@ class Publication(object):
 
     def start_publishing(self):
         while True:
-            print('Message sent to components %d' % self.env.now)
-            sent_duration = 1
-            yield self.env.timeout(sent_duration)
-            yield store.put('msg')
+            print('Message sent to components %d' % env.now)
+            store.put('msg')
+            yield rand_latency(env, 20,40)
 
 class Receiver(object):
     def __init__(self, env):
@@ -43,9 +52,8 @@ class Receiver(object):
 
     def start_receiving(self):
         while True:
-            print('Message received %d' % self.env.now)
-            received_handle_duration = 3
-            yield env.timeout(received_handle_duration)
+            print('Message received %d' % env.now)
+            yield env.timeout(30)
 
 env = simpy.Environment()
 store = simpy.Store(env)
@@ -57,21 +65,13 @@ receiver = Receiver(env)
 env.process(monitor.start_monitoring())
 
 env.process(publication.start_publishing())
-for i in range(3):
+for i in range(1):
     env.process(Component(env, store).start_processing_messages())
 env.process(receiver.start_receiving())
 
-env.run(until=100)
+env.run(until=10000)
 
 p1, = plt.plot(monitor.message_count)
-plt.legend ([p1], ['Unprocessed messages'], loc='upper left')
+plt.legend([p1], ['Unprocessed messages'], loc='upper left')
 
 plt.show()
-
-
-#p1, = plt.plot(monitor.jobstats)
-#p2, = plt.plot(monitor.rejectedstats)
-#p3, = plt.plot(monitor.completedstats)
-#plt.legend ([p1, p2, p3], ['Jobs in system', 'Rejected jobs', 'Completed jobs'], loc='upper left')
-#plt.savefig('results.pdf')
-#plt.show()
