@@ -1,41 +1,39 @@
-<svg id="mermaidChart229" xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 613.515625 412" style="max-width:613.515625px;"><style>
+<svg id="mermaidChart0" xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 644.078125 424" style="max-width:644.078125px;"><style>
   /* Flowchart variables */
 /* Sequence Diagram variables */
 /* Gantt chart variables */
 .mermaid .label {
-  font-family: 'trebuchet ms', verdana, arial;
   color: #333;
 }
 .node rect,
 .node circle,
 .node ellipse,
 .node polygon {
-  fill: #cde498;
-  stroke: #13540c;
+  fill: #ECECFF;
+  stroke: #CCCCFF;
   stroke-width: 1px;
 }
 .arrowheadPath {
-  fill: green;
+  fill: #333333;
 }
 .edgePath .path {
-  stroke: green;
-  stroke-width: 1.5px;
+  stroke: #333333;
 }
 .edgeLabel {
   background-color: #e8e8e8;
 }
 .cluster rect {
-  fill: #cdffb2 !important;
+  fill: #ffffde !important;
   rx: 4 !important;
-  stroke: #6eaa49 !important;
+  stroke: #aaaa33 !important;
   stroke-width: 1px !important;
 }
 .cluster text {
   fill: #333;
 }
 .actor {
-  stroke: #13540c;
-  fill: #cde498;
+  stroke: #CCCCFF;
+  fill: #ECECFF;
 }
 text.actor {
   fill: black;
@@ -67,8 +65,8 @@ text.actor {
   stroke: none;
 }
 .labelBox {
-  stroke: #326932;
-  fill: #cde498;
+  stroke: #CCCCFF;
+  fill: #ECECFF;
 }
 .labelText {
   fill: black;
@@ -82,10 +80,10 @@ text.actor {
   stroke-width: 2;
   stroke-dasharray: "2 2";
   marker-end: "url(#arrowhead)";
-  stroke: #326932;
+  stroke: #CCCCFF;
 }
 .note {
-  stroke: #6eaa49;
+  stroke: #aaaa33;
   fill: #fff5ad;
 }
 .noteText {
@@ -100,10 +98,10 @@ text.actor {
   opacity: 0.2;
 }
 .section0 {
-  fill: #6eaa49;
+  fill: rgba(102, 102, 255, 0.49);
 }
 .section2 {
-  fill: #6eaa49;
+  fill: #fff400;
 }
 .section1,
 .section3 {
@@ -172,8 +170,8 @@ text.actor {
 .task1,
 .task2,
 .task3 {
-  fill: #487e3a;
-  stroke: #13540c;
+  fill: #8a90dd;
+  stroke: #534fbc;
 }
 .taskTextOutside0,
 .taskTextOutside2 {
@@ -188,8 +186,8 @@ text.actor {
 .active1,
 .active2,
 .active3 {
-  fill: #cde498;
-  stroke: #13540c;
+  fill: #bfc7ff;
+  stroke: #534fbc;
 }
 .activeText0,
 .activeText1,
@@ -226,7 +224,7 @@ text.actor {
 .activeCrit2,
 .activeCrit3 {
   stroke: #ff8888;
-  fill: #cde498;
+  fill: #bfc7ff;
   stroke-width: 2;
 }
 .doneCrit0,
@@ -257,82 +255,82 @@ text.actor {
   fill: black;
 }
 g.classGroup text {
-  fill: #13540c;
+  fill: #9370DB;
   stroke: none;
   font-family: 'trebuchet ms', verdana, arial;
   font-size: 10px;
 }
 g.classGroup rect {
-  fill: #cde498;
-  stroke: #13540c;
+  fill: #ECECFF;
+  stroke: #9370DB;
 }
 g.classGroup line {
-  stroke: #13540c;
+  stroke: #9370DB;
   stroke-width: 1;
 }
 svg .classLabel .box {
   stroke: none;
   stroke-width: 0;
-  fill: #cde498;
+  fill: #ECECFF;
   opacity: 0.5;
 }
 svg .classLabel .label {
-  fill: #13540c;
+  fill: #9370DB;
   font-size: 10px;
 }
 .relation {
-  stroke: #13540c;
+  stroke: #9370DB;
   stroke-width: 1;
   fill: none;
 }
 .composition {
-  fill: #13540c;
-  stroke: #13540c;
+  fill: #9370DB;
+  stroke: #9370DB;
   stroke-width: 1;
 }
 #compositionStart {
-  fill: #13540c;
-  stroke: #13540c;
+  fill: #9370DB;
+  stroke: #9370DB;
   stroke-width: 1;
 }
 #compositionEnd {
-  fill: #13540c;
-  stroke: #13540c;
+  fill: #9370DB;
+  stroke: #9370DB;
   stroke-width: 1;
 }
 .aggregation {
-  fill: #cde498;
-  stroke: #13540c;
+  fill: #ECECFF;
+  stroke: #9370DB;
   stroke-width: 1;
 }
 #aggregationStart {
-  fill: #cde498;
-  stroke: #13540c;
+  fill: #ECECFF;
+  stroke: #9370DB;
   stroke-width: 1;
 }
 #aggregationEnd {
-  fill: #cde498;
-  stroke: #13540c;
+  fill: #ECECFF;
+  stroke: #9370DB;
   stroke-width: 1;
 }
 #dependencyStart {
-  fill: #13540c;
-  stroke: #13540c;
+  fill: #9370DB;
+  stroke: #9370DB;
   stroke-width: 1;
 }
 #dependencyEnd {
-  fill: #13540c;
-  stroke: #13540c;
+  fill: #9370DB;
+  stroke: #9370DB;
   stroke-width: 1;
 }
 #extensionStart {
-  fill: #13540c;
-  stroke: #13540c;
+  fill: #9370DB;
+  stroke: #9370DB;
   stroke-width: 1;
 }
 #extensionEnd {
-  fill: #13540c;
-  stroke: #13540c;
+  fill: #9370DB;
+  stroke: #9370DB;
   stroke-width: 1;
 }
 .node text {
@@ -346,8 +344,8 @@ div.mermaidTooltip {
   padding: 2px;
   font-family: 'trebuchet ms', verdana, arial;
   font-size: 12px;
-  background: #cdffb2;
-  border: 1px solid #6eaa49;
+  background: #ffffde;
+  border: 1px solid #aaaa33;
   border-radius: 2px;
   pointer-events: none;
   z-index: 100;
@@ -355,6 +353,6 @@ div.mermaidTooltip {
 
 svg {
   color: rgba(0, 0, 0, 0.65);
-  font: normal normal 400 normal 12px / 18px "Helvetica Neue For Number", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: normal normal 400 normal 14px / 21px "Helvetica Neue For Number", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-  </style><g><g class="output"><g class="clusters"><g class="cluster" id="subGraph2" style="opacity: 1;" transform="translate(487.9296875,196)"><rect width="171.171875" height="176" x="-85.5859375" y="-88"></rect><g class="label"><g transform="translate(0,0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"></div></foreignObject></g></g><text x="0" y="-74" fill="black" stroke="none" id="mermaidChart229Text" style="text-anchor: middle;"> komponentas</text></g><g class="cluster" id="subGraph1" style="opacity: 1;" transform="translate(296.7578125,196)"><rect width="171.171875" height="176" x="-85.5859375" y="-88"></rect><g class="label"><g transform="translate(0,0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"></div></foreignObject></g></g><text x="0" y="-74" fill="black" stroke="none" id="mermaidChart229Text" style="text-anchor: middle;"> komponentas</text></g><g class="cluster" id="subGraph0" style="opacity: 1;" transform="translate(105.5859375,196)"><rect width="171.171875" height="176" x="-85.5859375" y="-88"></rect><g class="label"><g transform="translate(0,0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"></div></foreignObject></g></g><text x="0" y="-74" fill="black" stroke="none" id="mermaidChart229Text" style="text-anchor: middle;"> komponentas</text></g></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M247.5546875,48.02296689824274L95.5859375,83L95.5859375,108L95.5859375,133" marker-end="url(#arrowhead14797)" style="fill:none"></path><defs><marker id="arrowhead14797" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M286.7578125,58L286.7578125,83L286.7578125,108L286.7578125,133" marker-end="url(#arrowhead14798)" style="fill:none"></path><defs><marker id="arrowhead14798" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M325.9609375,48.02296689824274L477.9296875,83L477.9296875,108L477.9296875,133" marker-end="url(#arrowhead14799)" style="fill:none"></path><defs><marker id="arrowhead14799" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M95.5859375,171L95.5859375,196L95.5859375,221" marker-end="url(#arrowhead14800)" style="fill:none"></path><defs><marker id="arrowhead14800" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M136.171875,227.93583214503974L159.50520833333334,221L165.33854166666666,221L171.171875,240L165.33854166666666,259L159.50520833333334,259L136.171875,252.06416785496026" marker-end="url(#arrowhead14801)" style="fill:none"></path><defs><marker id="arrowhead14801" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M286.7578125,171L286.7578125,196L286.7578125,221" marker-end="url(#arrowhead14802)" style="fill:none"></path><defs><marker id="arrowhead14802" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M327.34375,227.9358321450397L350.6770833333333,221L356.5104166666667,221L362.34375,240L356.5104166666667,259L350.6770833333333,259L327.34375,252.0641678549603" marker-end="url(#arrowhead14803)" style="fill:none"></path><defs><marker id="arrowhead14803" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M477.9296875,171L477.9296875,196L477.9296875,221" marker-end="url(#arrowhead14804)" style="fill:none"></path><defs><marker id="arrowhead14804" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M518.515625,227.93583214503974L541.8489583333334,221L547.6822916666666,221L553.515625,240L547.6822916666666,259L541.8489583333334,259L518.515625,252.06416785496026" marker-end="url(#arrowhead14805)" style="fill:none"></path><defs><marker id="arrowhead14805" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M95.5859375,259L95.5859375,284L95.5859375,309L243.328125,343.00425010216594" marker-end="url(#arrowhead14806)" style="fill:none"></path><defs><marker id="arrowhead14806" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M286.7578125,259L286.7578125,284L286.7578125,309L286.7578125,334" marker-end="url(#arrowhead14807)" style="fill:none"></path><defs><marker id="arrowhead14807" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M477.9296875,259L477.9296875,284L477.9296875,309L330.1875,343.00425010216594" marker-end="url(#arrowhead14808)" style="fill:none"></path><defs><marker id="arrowhead14808" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(171.171875,240)"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(362.34375,240)"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(553.515625,240)"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node" style="opacity: 1;" id="buferis3" transform="translate(477.9296875,152)"><rect rx="0" ry="0" x="-28.0234375" y="-19" width="56.046875" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-18.0234375,-9)"><foreignObject width="36.046875" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">buferis</div></foreignObject></g></g></g><g class="node" style="opacity: 1;" id="procesorius3" transform="translate(477.9296875,240)"><rect rx="0" ry="0" x="-40.5859375" y="-19" width="81.171875" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-30.5859375,-9)"><foreignObject width="61.171875" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">procesorius</div></foreignObject></g></g></g><g class="node" style="opacity: 1;" id="buferis2" transform="translate(286.7578125,152)"><rect rx="0" ry="0" x="-28.0234375" y="-19" width="56.046875" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-18.0234375,-9)"><foreignObject width="36.046875" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">buferis</div></foreignObject></g></g></g><g class="node" style="opacity: 1;" id="procesorius2" transform="translate(286.7578125,240)"><rect rx="0" ry="0" x="-40.5859375" y="-19" width="81.171875" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-30.5859375,-9)"><foreignObject width="61.171875" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">procesorius</div></foreignObject></g></g></g><g class="node" style="opacity: 1;" id="buferis1" transform="translate(95.5859375,152)"><rect rx="0" ry="0" x="-28.0234375" y="-19" width="56.046875" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-18.0234375,-9)"><foreignObject width="36.046875" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">buferis</div></foreignObject></g></g></g><g class="node" style="opacity: 1;" id="procesorius1" transform="translate(95.5859375,240)"><rect rx="0" ry="0" x="-40.5859375" y="-19" width="81.171875" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-30.5859375,-9)"><foreignObject width="61.171875" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">procesorius</div></foreignObject></g></g></g><g class="node" style="opacity: 1;" id="gamintojas" transform="translate(286.7578125,39)"><rect rx="0" ry="0" x="-39.203125" y="-19" width="78.40625" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-29.203125,-9)"><foreignObject width="58.40625" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">gamintojas</div></foreignObject></g></g></g><g class="node" style="opacity: 1;" id="agregatorius" transform="translate(286.7578125,353)"><rect rx="0" ry="0" x="-43.4296875" y="-19" width="86.859375" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-33.4296875,-9)"><foreignObject width="66.859375" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">agregatorius</div></foreignObject></g></g></g></g></g></g></svg>
+  </style><g><g class="output"><g class="clusters"><g class="cluster" id="subGraph2" style="opacity: 1;" transform="translate(513.3984375,202)"><rect width="181.359375" height="182" x="-90.6796875" y="-91"></rect><g class="label"><g transform="translate(0,0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"></div></foreignObject></g></g><text x="0" y="-77" fill="black" stroke="none" id="mermaidChart0Text" style="text-anchor: middle;"> komponentas</text></g><g class="cluster" id="subGraph1" style="opacity: 1;" transform="translate(312.0390625,202)"><rect width="181.359375" height="182" x="-90.6796875" y="-91"></rect><g class="label"><g transform="translate(0,0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"></div></foreignObject></g></g><text x="0" y="-77" fill="black" stroke="none" id="mermaidChart0Text" style="text-anchor: middle;"> komponentas</text></g><g class="cluster" id="subGraph0" style="opacity: 1;" transform="translate(110.6796875,202)"><rect width="181.359375" height="182" x="-90.6796875" y="-91"></rect><g class="label"><g transform="translate(0,0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"></div></foreignObject></g></g><text x="0" y="-77" fill="black" stroke="none" id="mermaidChart0Text" style="text-anchor: middle;"> komponentas</text></g></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M257.96875,50.458310700706136L100.6796875,86L100.6796875,111L100.6796875,136" marker-end="url(#arrowhead72)" style="fill:none"></path><defs><marker id="arrowhead72" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M302.0390625,61L302.0390625,86L302.0390625,111L302.0390625,136" marker-end="url(#arrowhead73)" style="fill:none"></path><defs><marker id="arrowhead73" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M346.109375,50.458310700706136L503.3984375,86L503.3984375,111L503.3984375,136" marker-end="url(#arrowhead74)" style="fill:none"></path><defs><marker id="arrowhead74" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M100.6796875,177L100.6796875,202L100.6796875,227" marker-end="url(#arrowhead75)" style="fill:none"></path><defs><marker id="arrowhead75" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M146.359375,233.931059205313L169.69270833333334,227L175.52604166666666,227L181.359375,247.5L175.52604166666666,268L169.69270833333334,268L146.359375,261.06894079468697" marker-end="url(#arrowhead76)" style="fill:none"></path><defs><marker id="arrowhead76" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M302.0390625,177L302.0390625,202L302.0390625,227" marker-end="url(#arrowhead77)" style="fill:none"></path><defs><marker id="arrowhead77" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M347.71875,233.931059205313L371.0520833333333,227L376.8854166666667,227L382.71875,247.5L376.8854166666667,268L371.0520833333333,268L347.71875,261.068940794687" marker-end="url(#arrowhead78)" style="fill:none"></path><defs><marker id="arrowhead78" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M503.3984375,177L503.3984375,202L503.3984375,227" marker-end="url(#arrowhead79)" style="fill:none"></path><defs><marker id="arrowhead79" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M549.078125,233.931059205313L572.4114583333334,227L578.2447916666666,227L584.078125,247.5L578.2447916666666,268L572.4114583333334,268L549.078125,261.06894079468697" marker-end="url(#arrowhead80)" style="fill:none"></path><defs><marker id="arrowhead80" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M100.6796875,268L100.6796875,293L100.6796875,318L253.0390625,352.4277566539924" marker-end="url(#arrowhead81)" style="fill:none"></path><defs><marker id="arrowhead81" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M302.0390625,268L302.0390625,293L302.0390625,318L302.0390625,343" marker-end="url(#arrowhead82)" style="fill:none"></path><defs><marker id="arrowhead82" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M503.3984375,268L503.3984375,293L503.3984375,318L351.0390625,352.4277566539924" marker-end="url(#arrowhead83)" style="fill:none"></path><defs><marker id="arrowhead83" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(181.359375,247.5)"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(382.71875,247.5)"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(584.078125,247.5)"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node" style="opacity: 1;" id="buferis3" transform="translate(503.3984375,156.5)"><rect rx="0" ry="0" x="-31.03125" y="-20.5" width="62.0625" height="41"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-21.03125,-10.5)"><foreignObject width="42.0625" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">buferis</div></foreignObject></g></g></g><g class="node" style="opacity: 1;" id="procesorius3" transform="translate(503.3984375,247.5)"><rect rx="0" ry="0" x="-45.6796875" y="-20.5" width="91.359375" height="41"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-35.6796875,-10.5)"><foreignObject width="71.359375" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">procesorius</div></foreignObject></g></g></g><g class="node" style="opacity: 1;" id="buferis2" transform="translate(302.0390625,156.5)"><rect rx="0" ry="0" x="-31.03125" y="-20.5" width="62.0625" height="41"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-21.03125,-10.5)"><foreignObject width="42.0625" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">buferis</div></foreignObject></g></g></g><g class="node" style="opacity: 1;" id="procesorius2" transform="translate(302.0390625,247.5)"><rect rx="0" ry="0" x="-45.6796875" y="-20.5" width="91.359375" height="41"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-35.6796875,-10.5)"><foreignObject width="71.359375" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">procesorius</div></foreignObject></g></g></g><g class="node" style="opacity: 1;" id="buferis1" transform="translate(100.6796875,156.5)"><rect rx="0" ry="0" x="-31.03125" y="-20.5" width="62.0625" height="41"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-21.03125,-10.5)"><foreignObject width="42.0625" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">buferis</div></foreignObject></g></g></g><g class="node" style="opacity: 1;" id="procesorius1" transform="translate(100.6796875,247.5)"><rect rx="0" ry="0" x="-45.6796875" y="-20.5" width="91.359375" height="41"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-35.6796875,-10.5)"><foreignObject width="71.359375" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">procesorius</div></foreignObject></g></g></g><g class="node" style="opacity: 1;" id="gamintojas" transform="translate(302.0390625,40.5)"><rect rx="0" ry="0" x="-44.0703125" y="-20.5" width="88.140625" height="41"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-34.0703125,-10.5)"><foreignObject width="68.140625" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">gamintojas</div></foreignObject></g></g></g><g class="node" style="opacity: 1;" id="agregatorius" transform="translate(302.0390625,363.5)"><rect rx="0" ry="0" x="-49" y="-20.5" width="98" height="41"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-39,-10.5)"><foreignObject width="78" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">agregatorius</div></foreignObject></g></g></g></g></g></g></svg>

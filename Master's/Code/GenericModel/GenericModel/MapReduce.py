@@ -2,7 +2,6 @@ import simpy
 import matplotlib
 from matplotlib import pyplot as plt
 import random
-import random
 
 def latency(env, latency_duration):
     return env.timeout(latency_duration)
