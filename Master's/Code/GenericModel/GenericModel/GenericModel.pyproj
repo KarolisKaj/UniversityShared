@@ -21,16 +21,34 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Extensions\DelayExtensions.py" />
     <Compile Include="MapReduce.py" />
+    <Compile Include="Simulation\Bootstrapper.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Simulation\Components\ConsumerComponent.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Simulation\Components\Component.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Simulation\DisplayComponents\DiscreteSlider.py" />
+    <Compile Include="Simulation\Extensions\RandomValueGenEx.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Extensions\" />
+    <Folder Include="C:\Users\WarHorse\SourceControl\UniversityShared\Master%27s\Code\GenericModel\GenericModel\Simulation\Extensions\" />
+    <Folder Include="Simulation\" />
+    <Folder Include="Simulation\DisplayComponents\" />
+    <Folder Include="Simulation\Components\" />
     <Folder Include="Systems.Diagrams\" />
     <Folder Include="Systems.Diagrams\MapReduce\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="requirements.txt" />
+    <Content Include="Simulation\Components\MonitorComponents.py">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="Systems.Diagrams\MapReduce\MapReduce.svg" />
     <Content Include="Systems.Diagrams\MapReduce\MapReduce.txt" />
   </ItemGroup>
