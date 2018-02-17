@@ -1,5 +1,5 @@
-from interface import Interface
+from Component import Component
 
-class ConsumerComponent(implements(IComponent)):
+class ConsumerComponent(Component):
         def __init__(self, name):
             print("Initializing ConsumerComponent")
