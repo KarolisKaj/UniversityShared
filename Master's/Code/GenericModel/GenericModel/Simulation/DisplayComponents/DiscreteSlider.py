@@ -4,7 +4,6 @@ from matplotlib import pyplot as plt
 from matplotlib.widgets import Slider, Button
 
 class DiscreteSlider(Slider):
-
     def __init__(self, * args, ** kwargs):
         self.inc = kwargs.pop('increment', 1)
         Slider.__init__(self, * args, ** kwargs)

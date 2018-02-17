@@ -1,8 +1,6 @@
 import simpy
 import random
 
-
-#Ui part
 import matplotlib
 from matplotlib import pyplot as plt
 from matplotlib.widgets import Slider, Button

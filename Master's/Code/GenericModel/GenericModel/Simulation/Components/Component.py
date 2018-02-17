@@ -1,10 +1,13 @@
 class Component(object):
     def __init__(self, name):
         self.name = name;
-        print(type(self).__name__)
+        print("Initializing " + self.name)
 
-    def Run(self):
+    def run(self):
         pass
 
-    def getName(self):
+    def stop(self):
+        pass
+
+    def get_name(self):
         return self.name

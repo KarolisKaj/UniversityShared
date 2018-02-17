@@ -31,8 +31,14 @@
     <Compile Include="Simulation\Components\Component.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Simulation\DisplayComponents\DataGrid.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Simulation\DisplayComponents\DiscreteSlider.py" />
     <Compile Include="Simulation\Extensions\RandomValueGenEx.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Simulation\Monitoring\MonitoringRule.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -41,12 +47,13 @@
     <Folder Include="Simulation\" />
     <Folder Include="Simulation\DisplayComponents\" />
     <Folder Include="Simulation\Components\" />
+    <Folder Include="Simulation\Monitoring\" />
     <Folder Include="Systems.Diagrams\" />
     <Folder Include="Systems.Diagrams\MapReduce\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="requirements.txt" />
-    <Content Include="Simulation\Components\MonitorComponents.py">
+    <Content Include="Simulation\Monitoring\Monitoring.py">
       <SubType>Code</SubType>
     </Content>
     <Content Include="Systems.Diagrams\MapReduce\MapReduce.svg" />
