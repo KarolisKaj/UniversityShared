@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>cfb10348-031d-4c6d-91d8-6214074658c2</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>MapReduce.py</StartupFile>
+    <StartupFile>EntryPoint.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,6 +21,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="EntryPoint.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="MapReduce.py" />
     <Compile Include="Simulation\Bootstrapper.py">
       <SubType>Code</SubType>
@@ -41,12 +44,16 @@
     <Compile Include="Simulation\Monitoring\MonitoringRule.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Simulation\Simulation.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="C:\Users\WarHorse\SourceControl\UniversityShared\Master%27s\Code\GenericModel\GenericModel\Simulation\Extensions\" />
     <Folder Include="Simulation\" />
     <Folder Include="Simulation\DisplayComponents\" />
     <Folder Include="Simulation\Components\" />
+    <Folder Include="Simulation\Extensions\" />
     <Folder Include="Simulation\Monitoring\" />
     <Folder Include="Systems.Diagrams\" />
     <Folder Include="Systems.Diagrams\MapReduce\" />
