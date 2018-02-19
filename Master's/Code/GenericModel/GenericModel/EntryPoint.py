@@ -1,4 +1,4 @@
-from Simulation.Bootstrapper import BootStrapper
+from Simulation.SimulationBootStrapper import SimulationBootStrapper
 
-bootstrapper = BootStrapper()
+bootstrapper = SimulationBootStrapper()
 bootstrapper.run_sim_handle()

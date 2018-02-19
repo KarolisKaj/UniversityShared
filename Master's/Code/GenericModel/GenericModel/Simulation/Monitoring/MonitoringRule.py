@@ -1,4 +1,5 @@
 class MonitoringRule(object):
-    """description of class"""
+    def evaluate(rule):
+        return rule();
 
 
