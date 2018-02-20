@@ -1,0 +1,7 @@
+graph TB
+gamintojas--10-->buferis1
+    subgraph komponentas
+    buferis1[buferis]-->procesorius1[procesorius]
+    procesorius1[procesorius]--50-->procesorius1[procesorius]
+    end
+procesorius1--15-->agregatorius

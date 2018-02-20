@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="C:\Users\WarHorse\SourceControl\UniversityShared\Master%27s\Code\GenericModel\GenericModel\Simulation\Extensions\" />
+    <Folder Include="ModelParser\" />
     <Folder Include="Simulation\" />
     <Folder Include="Simulation\DisplayComponents\" />
     <Folder Include="Simulation\Components\" />
@@ -56,12 +57,18 @@
     <Folder Include="Systems.Diagrams\MapReduce\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ModelParser\d3.js" />
+    <Content Include="ModelParser\EntryPoint.js" />
+    <Content Include="ModelParser\graphDb.js" />
+    <Content Include="ModelParser\MermaidParser.js" />
+    <Content Include="ModelParser\utils.js" />
     <Content Include="requirements.txt" />
     <Content Include="Simulation\Monitoring\Monitoring.py">
       <SubType>Code</SubType>
     </Content>
     <Content Include="Systems.Diagrams\MapReduce\MapReduce.svg" />
     <Content Include="Systems.Diagrams\MapReduce\MapReduce.txt" />
+    <Content Include="Systems.Diagrams\MapReduce\SimplifiedExample.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
