@@ -1,30 +1,52 @@
-export const detectType = function (text) {
-    text = text.replace(/^\s*%%.*\n/g, '\n')
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+/**
+ * @function detectType
+ * Detects the type of the graph text.
+ * ```mermaid
+ * graph LR
+ *  a-->b
+ *  b-->c
+ *  c-->d
+ *  d-->e
+ *  e-->f
+ *  f-->g
+ *  g-->h
+ * ```
+ *
+ * @param {string} text The text defining the graph
+ * @returns {string} A graph definition key
+ */
+var detectType = exports.detectType = function detectType(text) {
+    text = text.replace(/^\s*%%.*\n/g, '\n');
     if (text.match(/^\s*sequenceDiagram/)) {
-        return 'sequenceDiagram'
+        return 'sequenceDiagram';
     }
 
     if (text.match(/^\s*digraph/)) {
-        return 'dotGraph'
+        return 'dotGraph';
     }
 
     if (text.match(/^\s*info/)) {
-        return 'info'
+        return 'info';
     }
 
     if (text.match(/^\s*gantt/)) {
-        return 'gantt'
+        return 'gantt';
     }
 
     if (text.match(/^\s*classDiagram/)) {
-        return 'classDiagram'
+        return 'classDiagram';
     }
 
     if (text.match(/^\s*gitGraph/)) {
-        return 'gitGraph'
+        return 'gitGraph';
     }
-    return 'graph'
-}
+    return 'graph';
+};
 
 /**
  * @function isSubstringInArray
@@ -33,14 +55,14 @@ export const detectType = function (text) {
  * @param {array} arr The array to search
  * @returns {number} the array index containing the substring or -1 if not present
  **/
-export const isSubstringInArray = function (str, arr) {
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i].match(str)) return i
+var isSubstringInArray = exports.isSubstringInArray = function isSubstringInArray(str, arr) {
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i].match(str)) return i;
     }
-    return -1
-}
+    return -1;
+};
 
-export default {
-    detectType,
-    isSubstringInArray
-}
+exports.default = {
+    detectType: detectType,
+    isSubstringInArray: isSubstringInArray
+};

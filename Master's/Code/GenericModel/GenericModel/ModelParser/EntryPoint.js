@@ -1,12 +1,21 @@
 function runParsing()
 {
-    alert('die');
+    //var mermaid = require('./CoreParse/mermaid.min');
+    //console.log(mermaid.parse('graph TB'+
+    //'gamintojas--10--> buferis1'+
+    //'subgraph komponentas'+
+    //'buferis1[buferis]--> procesorius1[procesorius]'+
+    //'procesorius1[procesorius]--50--> procesorius1[procesorius]'+
+    //'end'+
+    //'procesorius1--15--> agregatorius'));
+    console.log('die');
+
     var graph = require('./graphDb');
     var flow = require('./flow');
-    flow.parser.yy = graph;
-    alert('die');
+    //flow.parser.yy = graph;
 
-    flow.parser.parse(text);
-    alert('die');
+    //console.log('die');
+    //flow.parser.parse("");
 }
 
+runParsing();
