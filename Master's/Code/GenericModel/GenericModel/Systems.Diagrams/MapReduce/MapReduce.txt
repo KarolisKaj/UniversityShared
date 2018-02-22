@@ -1,21 +1,9 @@
 <div class="mermaid">
 graph TB
-gamintojas-->buferis1
-gamintojas-->buferis2
-gamintojas-->buferis3
+gamintojas--10-->buferis1
     subgraph komponentas
     buferis1[buferis]-->procesorius1[procesorius]
-    procesorius1[procesorius]-->procesorius1[procesorius]
+    procesorius1[procesorius]--50-->procesorius1[procesorius]
     end
-    subgraph komponentas
-    buferis2[buferis]-->procesorius2[procesorius]
-    procesorius2[procesorius]-->procesorius2[procesorius]
-    end
-    subgraph komponentas
-    buferis3[buferis]-->procesorius3[procesorius]
-    procesorius3[procesorius]-->procesorius3[procesorius]
-    end
-procesorius1-->agregatorius
-procesorius2-->agregatorius
-procesorius3-->agregatorius
+procesorius1--15-->agregatorius
 </div>
