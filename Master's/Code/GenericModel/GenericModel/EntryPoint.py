@@ -15,10 +15,7 @@ def getModelGraph(parser):
     subGraphs = json.loads(args.subGraphs)
     return vertices, edges, subGraphs
 
-argsParser = addArgs()
-getModelGraph(argsParser)
-
 from Simulation.SimulationBootStrapper import SimulationBootStrapper
-
-bootstrapper = SimulationBootStrapper()
+argsParser = addArgs()
+bootstrapper = SimulationBootStrapper(getModelGraph(argsParser))
 bootstrapper.run_sim_handle()

@@ -28,7 +28,7 @@
     <Compile Include="Simulation\SimulationBootStrapper.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Simulation\Components\ConsumerComponent.py">
+    <Compile Include="Simulation\Components\WireComponent.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Simulation\Components\Component.py">
