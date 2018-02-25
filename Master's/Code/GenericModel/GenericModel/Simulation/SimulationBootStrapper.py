@@ -2,8 +2,8 @@ import simpy
 
 from Simulation.DisplayComponents.DataGrid import DataGrid
 
-class SimulationBootStrapper(object, vertices, edges, subgraphs):
-    def __init__(self):
+class SimulationBootStrapper(object):
+    def __init__(self, vertices, edges, subgraphs):
         print("-----Initiliazing Bootstrapper-----")
         
         self.vertices = vertices;
@@ -21,9 +21,10 @@ class SimulationBootStrapper(object, vertices, edges, subgraphs):
         #TODO: Add 
         pass
 
-    def initialize_components(self):
+    def initialize_components(self, components):
+        
         #for edge in self.edges:
-        #    if(edge)
+        #    if(edge.)
         #    pass
         # TODO: Do the magic.
         pass
