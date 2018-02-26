@@ -7,38 +7,44 @@ class SimulationBootStrapper(object):
     def __init__(self, vertices, edges, subgraphs):
         print("-----Initiliazing Bootstrapper-----")
         
-        self.vertices = vertices;
-        self.edges = edges;
-        self.subgraphs = subgraphs;
+        self.startNode = "start"
+        self.endNode = "end"
+        self.linkText = "text"
+
+        self.vertices = vertices
+        self.edges = edges
+        self.subgraphs = subgraphs
 
         self.dataGrid = DataGrid(self.run_sim_handle)
         self.dataGrid.create_grid(100, ['Unprocessed messages', 'Total messages'])
 
     def run_sim_handle(self):
-        components = self.initialize_components(self.edges)
-        components = self.add_component_actions(components, self.edges)
         self.env = simpy.Environment()
         self.store = simpy.Store(self.env)
 
+        components = self.initialize_components(self.edges)
+
         #TODO: Start monitoring;
         #TODO: Add parsing;
-        #TODO: Add 
+        #TODO: Add
         pass
 
     def initialize_components(self, edges):
-        components = []
+        components = dict()
         for edge in edges:
-            if(not self.key_exists(edge["start"], components)):
-                components.append(Component(edge["start"]))
-            if(not self.key_exists(edge["end"], components)):
-                components.append(Component(edge["end"]))
+            self.add_new_key(edge[self.startNode], components)
+            self.add_new_key(edge[self.endNode], components)
+            self.add_actions(components, edge)
+
         return components
 
-    def key_exists(self, name, components):
-        for component in components:
-            if(name == component.get_name()):
-                return True
-        return False
+    def add_new_key(self, name, components):
+        if(not name in components):
+            components[name] = Component(name);
 
-    def add_component_actions(self, components, edges):
-        pass
+
+    def add_actions(self, components, edge):
+        print(components)
+        #if(edge[self.startNode] == edge[self.endNode]):
+           # print(components[self.startNode])
+            #.add_action(lambda: self.env.timeout(edge[self.linkText]))
