@@ -44,7 +44,5 @@ class SimulationBootStrapper(object):
 
 
     def add_actions(self, components, edge):
-        print(components)
-        #if(edge[self.startNode] == edge[self.endNode]):
-           # print(components[self.startNode])
-            #.add_action(lambda: self.env.timeout(edge[self.linkText]))
+        if(edge[self.startNode] == edge[self.endNode]):
+            components[edge[self.startNode]].add_action(lambda: self.env.timeout(edge[self.linkText]))

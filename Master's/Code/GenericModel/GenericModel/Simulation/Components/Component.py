@@ -11,7 +11,7 @@ class Component(object):
             yield timeoutAction
 
     def add_action(self, action):
-        self.actions.add(action);
+        self.actions.append(action);
 
     def get_name(self):
         return self.name
