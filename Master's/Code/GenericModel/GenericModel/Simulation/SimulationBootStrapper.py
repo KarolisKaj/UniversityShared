@@ -23,11 +23,16 @@ class SimulationBootStrapper(object):
         self.store = simpy.Store(self.env)
 
         components = self.initialize_components(self.edges)
+        print(components)
+        for index in components:
+            #components[index].run()
+            self.env.process(components[index].run())
 
+        self.env.run(until=1000)
         #TODO: Start monitoring;
         #TODO: Add parsing;
         #TODO: Add
-        pass
+        
 
     def initialize_components(self, edges):
         components = dict()
@@ -42,7 +47,9 @@ class SimulationBootStrapper(object):
         if(not name in components):
             components[name] = Component(name);
 
-
     def add_actions(self, components, edge):
         if(edge[self.startNode] == edge[self.endNode]):
-            components[edge[self.startNode]].add_action(lambda: self.env.timeout(edge[self.linkText]))
+            components[edge[self.startNode]].add_action(lambda: self.yield_timeout(self.env, edge, self.linkText))
+    
+    def yield_timeout(self, env, edge, linkText):
+        return env.timeout(int(edge[linkText]))
