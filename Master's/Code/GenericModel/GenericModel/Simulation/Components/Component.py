@@ -6,10 +6,8 @@ class Component(object):
 
     def run(self):
         while True:
-             if len(self.actions) == 0:
-                 break
-             for action in self.actions:
-                 yield action()
+             if len(self.actions) == 0: break
+             for action in self.actions: yield action()
 
     def add_action(self, action):
         self.actions.append(action)

@@ -23,9 +23,7 @@ class SimulationBootStrapper(object):
         self.store = simpy.Store(self.env)
 
         components = self.initialize_components(self.edges)
-        print(components)
         for index in components:
-            #components[index].run()
             self.env.process(components[index].run())
 
         self.env.run(until=1000)
