@@ -56,6 +56,7 @@
   <ItemGroup>
     <Content Include="ModelParser\EntryPoint.js" />
     <Content Include="ModelParser\mermaid.js" />
+    <Content Include="readme.md" />
     <Content Include="requirements.txt" />
     <Content Include="Simulation\Monitoring\Monitoring.py">
       <SubType>Code</SubType>
