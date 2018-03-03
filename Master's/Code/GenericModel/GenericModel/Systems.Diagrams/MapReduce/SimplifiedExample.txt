@@ -1,5 +1,5 @@
 graph TB
-gamintojas--10-->buferis1
+gamintojas!to10!dr0.1-->buferis1
     subgraph komponentas
     buferis1[buferis]-->procesorius1[procesorius]
     procesorius1[procesorius]--50-->procesorius1[procesorius]

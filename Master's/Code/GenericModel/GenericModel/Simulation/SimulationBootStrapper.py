@@ -1,4 +1,5 @@
 import simpy
+import re
 
 from Simulation.DisplayComponents.DataGrid import DataGrid
 from Simulation.Components.Component import Component
@@ -44,7 +45,8 @@ class SimulationBootStrapper(object):
 
     def add_new_key(self, name, components):
         if(not name in components):
-            components[name] = Component(name)
+            attributes = self.extract_model_attributes(name)
+            components[name] = Component(name, attributes)
 
     def add_actions(self, components, edge):
         if(edge[self.startNode] == edge[self.endNode]):
@@ -52,3 +54,11 @@ class SimulationBootStrapper(object):
     
     def yield_timeout(self, env, edge, linkText):
         return generate_gauss_timeout(env, int(edge[linkText]))
+
+    def extract_model_attributes(self, name):
+        matches = re.findall("(!([a-z]+)(\d+[\,\.]?\d*))", name)
+        attributes = []
+        for match in matches:
+            attributes.append(match[1], match[2])
+
+        return attributes
