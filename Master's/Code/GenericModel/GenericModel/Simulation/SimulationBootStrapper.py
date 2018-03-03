@@ -2,6 +2,7 @@ import simpy
 
 from Simulation.DisplayComponents.DataGrid import DataGrid
 from Simulation.Components.Component import Component
+from Simulation.Extensions.RandomValueGenEx import *
 
 class SimulationBootStrapper(object):
     def __init__(self, vertices, edges, subgraphs):
@@ -43,11 +44,11 @@ class SimulationBootStrapper(object):
 
     def add_new_key(self, name, components):
         if(not name in components):
-            components[name] = Component(name);
+            components[name] = Component(name)
 
     def add_actions(self, components, edge):
         if(edge[self.startNode] == edge[self.endNode]):
             components[edge[self.startNode]].add_action(lambda: self.yield_timeout(self.env, edge, self.linkText))
     
     def yield_timeout(self, env, edge, linkText):
-        return env.timeout(int(edge[linkText]))
+        return generate_gauss_timeout(env, int(edge[linkText]))

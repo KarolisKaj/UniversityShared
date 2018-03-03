@@ -28,6 +28,7 @@ function runParsing() {
             throw error;
         }
         console.log(stdout);
+        console.log("Simulation ended successfully!");
     });
 }
 
