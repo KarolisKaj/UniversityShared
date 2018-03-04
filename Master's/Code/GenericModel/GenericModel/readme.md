@@ -19,5 +19,6 @@ Conceptual model documentation
 All information about model is taken from mermaid defined model. Following information gives you an idea how you can modify model to achieve wanted results:
 
 - Components
-	- dr - death rate i.e. `dr0.5` from 0 to 1 probability of death to occur;
-	- to - time out i.e. `to50`;
+	- !dr - death rate i.e. `dr0.5` from 0 to 1 probability of death to occur;
+	- !to - time out i.e. `to50`;
+	- !cl - clone times i.e. `cl3`. That will spawn three nodes of that particular component

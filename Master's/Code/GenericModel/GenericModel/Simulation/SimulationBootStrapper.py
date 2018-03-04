@@ -22,9 +22,10 @@ class SimulationBootStrapper(object):
         self.dataGrid = DataGrid(self.run_sim_handle)
         self.dataGrid.create_grid(100, ['Unprocessed messages', 'Total messages'])
 
+        self.stores = dict()
+
     def run_sim_handle(self):
         self.env = simpy.Environment()
-        self.store = simpy.Store(self.env)
 
         components = self.initialize_components(self.edges)
         for index in components:
@@ -62,8 +63,9 @@ class SimulationBootStrapper(object):
         return lambda: generate_gauss_timeout(self.env, int(attributes['to']) if 'to' in attributes else default_timeout)  
 
     def add_actions(self, components, edge):
-        # TODO: store between two components.
-        pass
-        #if(edge[self.startNode] == edge[self.endNode]):
-        #    components[edge[self.startNode]].add_action(lambda: self.yield_timeout(self.env, edge, self.linkText))
+        if (not edge[self.startNode] + ' To ' + edge[self.endNode] in self.stores):
+            store = simpy.Store(self.env)
+            components[edge[self.startNode]].add_action(lambda: store.put(edge[self.startNode] + " produced message."))
+            components[edge[self.endNode]].add_action(lambda: store.get())
+            self.stores[edge[self.startNode] + ' To ' + edge[self.endNode]] = store
 

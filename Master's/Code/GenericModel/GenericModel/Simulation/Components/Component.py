@@ -5,7 +5,8 @@ class Component(object):
         self.name = name
         print("Initializing component named - " + self.name)
         self.actions = []
-        self.model_component(attributes)
+        self.attributes = attributes
+        self.model_component(self.attributes)
         self.timeout_action = None
 
 
@@ -13,14 +14,12 @@ class Component(object):
         while True:
             for action in self.actions: 
                 action()
-                print("action exists")
             yield self.timeout_action()
 
     def add_action(self, action):
         self.actions.append(action)
     
     def set_timeout_action(self, action):
-        print("added time out")
         self.timeout_action = action
 
     def get_name(self):
@@ -30,3 +29,10 @@ class Component(object):
         for attribute in attributes:
             print(attribute)
 
+    def clone(self):
+        component = Component(self.get_name(), self.attributes)
+        component.set_timeout_action(self.timeout_action)
+        for action in self.actions:
+            component.add_action(action)
+         
+        return component
