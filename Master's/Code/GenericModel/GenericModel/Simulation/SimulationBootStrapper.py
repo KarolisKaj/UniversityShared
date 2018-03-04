@@ -59,6 +59,6 @@ class SimulationBootStrapper(object):
         matches = re.findall("(!([a-z]+)(\d+[\,\.]?\d*))", name)
         attributes = []
         for match in matches:
-            attributes.append(match[1], match[2])
+            attributes.append((match[1], match[2]))
 
         return attributes

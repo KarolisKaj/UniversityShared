@@ -1,6 +1,4 @@
-from Component import Component
-
-class Monitor(Component):
+class Monitor(object):
     def __init__(self, name, monitoringRulesSet):
         super().__init__(name)
         self.monitoringRulesSet = monitoringRulesSet

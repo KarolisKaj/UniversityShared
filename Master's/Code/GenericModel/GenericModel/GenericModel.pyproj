@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>cfb10348-031d-4c6d-91d8-6214074658c2</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>EntryPoint.py</StartupFile>
+    <StartupFile>Simulation\Components\AttributeRules.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -25,6 +25,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="MapReduce.py" />
+    <Compile Include="Simulation\Components\AttributeRules.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Simulation\Components\module.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Simulation\SimulationBootStrapper.py">
       <SubType>Code</SubType>
     </Compile>
