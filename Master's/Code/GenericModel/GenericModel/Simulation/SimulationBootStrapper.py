@@ -5,6 +5,8 @@ from Simulation.DisplayComponents.DataGrid import DataGrid
 from Simulation.Components.Component import Component
 from Simulation.Extensions.RandomValueGenEx import *
 
+default_timeout = 10
+
 class SimulationBootStrapper(object):
     def __init__(self, vertices, edges, subgraphs):
         print("-----Initiliazing Bootstrapper-----")
@@ -32,7 +34,6 @@ class SimulationBootStrapper(object):
         #TODO: Start monitoring;
         #TODO: Add parsing;
         #TODO: Add
-        
 
     def initialize_components(self, edges):
         components = dict()
@@ -47,18 +48,22 @@ class SimulationBootStrapper(object):
         if(not name in components):
             attributes = self.extract_model_attributes(name)
             components[name] = Component(name, attributes)
-
-    def add_actions(self, components, edge):
-        if(edge[self.startNode] == edge[self.endNode]):
-            components[edge[self.startNode]].add_action(lambda: self.yield_timeout(self.env, edge, self.linkText))
-    
-    def yield_timeout(self, env, edge, linkText):
-        return generate_gauss_timeout(env, int(edge[linkText]))
-
+            components[name].set_timeout_action(self.create_timeout_action(self.env, attributes))
+          
     def extract_model_attributes(self, name):
         matches = re.findall("(!([a-z]+)(\d+[\,\.]?\d*))", name)
         attributes = []
         for match in matches:
             attributes.append((match[1], match[2]))
 
-        return attributes
+        return dict(attributes)
+
+    def create_timeout_action(self, env, attributes):
+        return lambda: generate_gauss_timeout(self.env, int(attributes['to']) if 'to' in attributes else default_timeout)  
+
+    def add_actions(self, components, edge):
+        # TODO: store between two components.
+        pass
+        #if(edge[self.startNode] == edge[self.endNode]):
+        #    components[edge[self.startNode]].add_action(lambda: self.yield_timeout(self.env, edge, self.linkText))
+

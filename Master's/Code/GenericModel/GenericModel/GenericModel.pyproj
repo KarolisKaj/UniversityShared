@@ -28,9 +28,6 @@
     <Compile Include="Simulation\Components\AttributeRules.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Simulation\Components\module.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Simulation\SimulationBootStrapper.py">
       <SubType>Code</SubType>
     </Compile>
