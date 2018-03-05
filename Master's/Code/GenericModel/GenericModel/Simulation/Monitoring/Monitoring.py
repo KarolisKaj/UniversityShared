@@ -10,8 +10,8 @@ class Monitoring(object):
                 if(rule.get_name() in self.data):
                     self.data[rule.get_name()].append(rule.evaluate())
                 else:
-                   self.data[rule.get_name()] = []
-                   self.data[rule.get_name()].append(rule.evaluate())
+                    self.data[rule.get_name()] = []
+                    self.data[rule.get_name()].append(rule.evaluate())
 
             yield interval_handle()
 

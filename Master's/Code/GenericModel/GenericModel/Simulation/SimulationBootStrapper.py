@@ -33,13 +33,19 @@ class SimulationBootStrapper(object):
         for index in components:
             self.env.process(components[index].run())
 
-        monitor = Monitoring([MonitoringRule(store, lambda: len(self.stores[store])) for store in self.stores])
+        monitor = Monitoring([self.create_monitor_rule(store) for store in self.stores])
         self.env.process(monitor.start_monitoring(lambda: self.env.timeout(10)))
-        #TODO: Start monitoring;
+
         #TODO: Display adjustments;
             #TODO: Events on invoked
 
         self.env.run(until=1000)
+
+        print(monitor.get_results())
+        #self.dataGrid.update_results(monitor.get_results())
+
+    def create_monitor_rule(self, name):
+        return MonitoringRule(name, lambda: len(self.stores[name].items))
 
     def initialize_components(self, edges):
         components = dict()
