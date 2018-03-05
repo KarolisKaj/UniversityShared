@@ -26,8 +26,9 @@ class Component(object):
         return self.name
 
     def model_component(self, attributes):
-        for attribute in attributes:
-            print(attribute)
+        #for attribute in attributes:
+        #    print(attribute)
+        pass
 
     def clone(self):
         component = Component(self.get_name(), self.attributes)

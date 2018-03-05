@@ -1,18 +1,19 @@
-class Monitor(object):
-    def __init__(self, name, monitoringRulesSet):
-        super().__init__(name)
+class Monitoring(object):
+    def __init__(self, monitoringRulesSet):
         self.monitoringRulesSet = monitoringRulesSet
+        self.data = dict()
 
-    def start_monitoring(self, interval_handle, interation_count):
-        for i in range(len(self.monitoringRulesSet)):
-            data.append([])
+    def start_monitoring(self, interval_handle):
+        while True:
+            for rule in self.monitoringRulesSet:
+                #print(rule.get_name())
+                if(rule.get_name() in self.data):
+                    self.data[rule.get_name()].append(rule.evaluate())
+                else:
+                   self.data[rule.get_name()] = []
+                   self.data[rule.get_name()].append(rule.evaluate())
 
-        self.count = 0
-        while count != count:
-            self.count = self.count + 1
-            for i in self.monitoringRulesSet:
-                data[i].append(self.monitoringRulesSet[i]())
             yield interval_handle()
 
-        return data
-
+    def get_results(self):
+        return self.data

@@ -3,6 +3,8 @@ import re
 
 from Simulation.DisplayComponents.DataGrid import DataGrid
 from Simulation.Components.Component import Component
+from Simulation.Monitoring.Monitoring import Monitoring
+from Simulation.Monitoring.MonitoringRule import MonitoringRule
 from Simulation.Extensions.RandomValueGenEx import *
 
 default_timeout = 10
@@ -19,10 +21,10 @@ class SimulationBootStrapper(object):
         self.edges = edges
         self.subgraphs = subgraphs
 
-        self.dataGrid = DataGrid(self.run_sim_handle)
-        self.dataGrid.create_grid(100, ['Unprocessed messages', 'Total messages'])
-
         self.stores = dict()
+        
+        self.dataGrid = DataGrid(self.run_sim_handle)
+        self.dataGrid.create_grid(1000, ['Unprocessed messages', 'Total messages'])
 
     def run_sim_handle(self):
         self.env = simpy.Environment()
@@ -31,10 +33,13 @@ class SimulationBootStrapper(object):
         for index in components:
             self.env.process(components[index].run())
 
-        self.env.run(until=1000)
+        monitor = Monitoring([MonitoringRule(store, lambda: len(self.stores[store])) for store in self.stores])
+        self.env.process(monitor.start_monitoring(lambda: self.env.timeout(10)))
         #TODO: Start monitoring;
-        #TODO: Add parsing;
-        #TODO: Add
+        #TODO: Display adjustments;
+            #TODO: Events on invoked
+
+        self.env.run(until=1000)
 
     def initialize_components(self, edges):
         components = dict()
@@ -68,4 +73,3 @@ class SimulationBootStrapper(object):
             components[edge[self.startNode]].add_action(lambda: store.put(edge[self.startNode] + " produced message."))
             components[edge[self.endNode]].add_action(lambda: store.get())
             self.stores[edge[self.startNode] + ' To ' + edge[self.endNode]] = store
-

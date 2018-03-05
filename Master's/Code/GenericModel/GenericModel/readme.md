@@ -21,4 +21,4 @@ All information about model is taken from mermaid defined model. Following infor
 - Components
 	- !dr - death rate i.e. `dr0.5` from 0 to 1 probability of death to occur;
 	- !to - time out i.e. `to50`;
-	- !cl - clone times i.e. `cl3`. That will spawn three nodes of that particular component
+	- !cl - clone times i.e. `cl3`. That will spawn three nodes of that particular component;

@@ -1,5 +1,11 @@
 class MonitoringRule(object):
-    def evaluate(rule):
-        return rule();
+    def __init__(self, name, rule):
+        self.name = name
+        self.rule = rule
 
+    def evaluate(self):
+        return self.rule();
+
+    def get_name(self):
+        return self.name
 
