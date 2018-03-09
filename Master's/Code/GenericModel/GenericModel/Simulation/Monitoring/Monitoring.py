@@ -6,7 +6,6 @@ class Monitoring(object):
     def start_monitoring(self, interval_handle):
         while True:
             for rule in self.monitoringRulesSet:
-                #print(rule.get_name())
                 if(rule.get_name() in self.data):
                     self.data[rule.get_name()].append(rule.evaluate())
                 else:

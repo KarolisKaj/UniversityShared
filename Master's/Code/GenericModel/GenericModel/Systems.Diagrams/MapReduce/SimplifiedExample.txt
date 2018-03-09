@@ -3,4 +3,4 @@ gamintojas!to10!dr0.1[producer]-->buferis1
     subgraph komponentas
     buferis1[buferis]-->procesorius1!to5[procesorius]
     end
-procesorius1!to5-->agregatorius!to10
+procesorius1!to5-->agregatorius!to6

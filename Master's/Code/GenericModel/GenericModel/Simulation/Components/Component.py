@@ -9,7 +9,6 @@ class Component(object):
         self.model_component(self.attributes)
         self.timeout_action = None
 
-
     def run(self):
         while True:
             for action in self.actions: 

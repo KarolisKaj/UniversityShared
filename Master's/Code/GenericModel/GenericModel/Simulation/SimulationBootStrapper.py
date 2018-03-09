@@ -23,8 +23,6 @@ class SimulationBootStrapper(object):
 
         self.stores = dict()
         
-        self.dataGrid = DataGrid(self.run_sim_handle)
-        self.dataGrid.create_grid(1000, ['Unprocessed messages', 'Total messages'])
 
     def run_sim_handle(self):
         self.env = simpy.Environment()
@@ -40,9 +38,11 @@ class SimulationBootStrapper(object):
             #TODO: Events on invoked
 
         self.env.run(until=1000)
+        self.create_dataGrid(monitor.get_results())
 
-        print(monitor.get_results())
-        #self.dataGrid.update_results(monitor.get_results())
+    def create_dataGrid(self, data):
+        self.dataGrid = DataGrid(self.run_sim_handle)
+        self.dataGrid.create_grid(data)
 
     def create_monitor_rule(self, name):
         return MonitoringRule(name, lambda: len(self.stores[name].items))

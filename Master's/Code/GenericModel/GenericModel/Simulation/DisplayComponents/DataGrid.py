@@ -9,24 +9,24 @@ class DataGrid(object):
         self.parameters = []
         self.run_sim_handle = run_sim_handle;
 
-    def create_grid(self, maximumRange, parameter_names):
+    def create_grid(self, data):
         matplotlib.rcParams['figure.figsize'] = (13, 8)
 
         fig, ax = plt.subplots()
         plt.subplots_adjust(left=0.1, bottom=0.05)
 
-        for _ in parameter_names:
-            p1, = ax.plot(range(maximumRange))
+        for metric in data:
+            p1, = ax.plot(data[metric])
             self.parameters.append(p1) 
 
         fig.canvas.draw_idle()
 
-        fig.legend(self.parameters, parameter_names, loc='upper left')
+        fig.legend(self.parameters, [metric for metric in data], loc='upper left')
         plt.show()
 
     def update_data(self, data):
-        for i in range(data.Count()):
-            self.parameters[i].set_ydata(data[i])
+        for i in data:
+            print(len(data[i]))
 
     def add_changeable_sliders():
         components_axes = plt.axes([0.25, 0.05, 0.65, 0.03])
