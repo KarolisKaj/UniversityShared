@@ -18,4 +18,4 @@ def getModelGraph(parser):
 from Simulation.SimulationBootStrapper import SimulationBootStrapper
 argsParser = addArgs()
 bootstrapper = SimulationBootStrapper(*getModelGraph(argsParser))
-bootstrapper.run_sim_handle()
+bootstrapper.run_sim()

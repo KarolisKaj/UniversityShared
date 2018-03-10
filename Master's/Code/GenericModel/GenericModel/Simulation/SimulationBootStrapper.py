@@ -25,7 +25,7 @@ class SimulationBootStrapper(object):
         
         self.dataGrid = None
 
-    def run_sim_handle(self):
+    def run_sim(self):
         self.env = simpy.Environment()
 
         global stored_components
@@ -43,15 +43,19 @@ class SimulationBootStrapper(object):
         self.create_dataGrid(monitor.get_results())
 
         for component in stored_components:
-            print(stored_attributes[component])
-            print(stored_components[component])
-            self.dataGrid.add_changeable_slider(component, (lambda x: self.assign(stored_attributes[name], "cl", int(x))))
+            self.dataGrid.add_changeable_slider(component, lambda x: self.assign(stored_attributes[component], "cl", int(x)), 4)
 
-        self.dataGrid.show_grid()
         print("Finished simulation. Waiting for events...")
+        self.dataGrid.show_grid()
+
+    def create_dynamic_values():
+        pass
+        #TODO: add for each attribute. To create a different handle for changeable slider.
 
     def assign(self, dic, name, value):
         dic[name] = value
+        print(value)
+        self.run_sim()
 
     def create_dataGrid(self, data):
         if(self.dataGrid is None):

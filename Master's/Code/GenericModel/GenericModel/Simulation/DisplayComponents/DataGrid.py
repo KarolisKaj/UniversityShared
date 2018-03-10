@@ -22,11 +22,11 @@ class DataGrid(object):
 
 
     def create_grid(self, data):
-        matplotlib.rcParams['figure.figsize'] = (13, 8)
+        matplotlib.rcParams['figure.figsize'] = (18, 9)
 
         fig, ax = plt.subplots()
         self.fig = fig
-        plt.subplots_adjust(left=0.1, bottom=0.5)
+        plt.subplots_adjust(left=0.25, bottom=0.05)
 
         for metric in data:
             p1, = ax.plot(data[metric])
@@ -36,22 +36,19 @@ class DataGrid(object):
 
         fig.legend(self.parameters, [metric for metric in data], loc='upper left')
 
-        #self.add_changeable_slider("aaaa", lambda x: x*2)
-
-
     def update_data(self, data):
         for param, metric in zip(self.parameters, data):
             param.set_ydata(data[metric])
 
-    def add_changeable_slider(self, name, handle):
+    def add_changeable_slider(self, name, handle, default_value):
         components_axes = plt.axes(self.calculate_slider_coordinates())
         
-        components_slider = DiscreteSlider(components_axes, name, 1, 10, valinit=4)
+        components_slider = DiscreteSlider(components_axes, name, 1, 10, valinit=default_value)
         components_slider.on_changed(handle)
         
         self.main_plot_bottom = self.main_plot_bottom + self.main_plot_bottom_step
 
-        plt.subplots_adjust(left=0.10, bottom=self.main_plot_bottom)
+        plt.subplots_adjust(left=0.25, bottom=self.main_plot_bottom)
 
         self.sliders[name] = components_slider
 
