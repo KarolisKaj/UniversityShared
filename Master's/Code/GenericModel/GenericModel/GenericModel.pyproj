@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>cfb10348-031d-4c6d-91d8-6214074658c2</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>EntryPoint.py</StartupFile>
+    <StartupFile>Simulation\DisplayComponents\DataGrid.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -29,6 +29,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Simulation\Constants\Constants.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Simulation\Data\DataStore.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Simulation\Extensions\ComponentExtensions.py">
@@ -60,6 +63,7 @@
     <Folder Include="Simulation\Extensions\" />
     <Folder Include="Simulation\Monitoring\" />
     <Folder Include="Simulation\Constants\" />
+    <Folder Include="Simulation\Data\" />
     <Folder Include="Systems.Diagrams\" />
     <Folder Include="Systems.Diagrams\MapReduce\" />
   </ItemGroup>

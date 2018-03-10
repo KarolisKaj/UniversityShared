@@ -6,10 +6,11 @@ from matplotlib.widgets import Slider, Button
 from Simulation.DisplayComponents.DiscreteSlider import DiscreteSlider
 
 class DataGrid(object):
-    def __init__(self, run_sim_handle):
+    def __init__(self):
         print("Initializing DataGrid")
         self.parameters = []
-        self.run_sim_handle = run_sim_handle;
+        self.sliders = dict()
+        self.next_slider_position = None
 
     def create_grid(self, data):
         matplotlib.rcParams['figure.figsize'] = (13, 8)
@@ -27,15 +28,17 @@ class DataGrid(object):
         plt.show()
 
     def update_data(self, data):
-        for i in data:
-            print(len(data[i]))
+        for param, metric in zip(self.parameters, data):
+            param.set_ydata(data[metric])
 
-    def add_changeable_sliders():
+    def add_changeable_slider(name, handle):
         components_axes = plt.axes([0.25, 0.05, 0.65, 0.03])
         
-        components_slider = DiscreteSlider(components_axes, 'Components count', 1, 10, valinit=4)
-        components_slider.on_changed(self.run_sim_handle)
+        components_slider = DiscreteSlider(components_axes, name, 1, 10, valinit=4)
+        components_slider.on_changed(handle)
 
         plt.subplots_adjust(left=0.1, bottom=0.20)
+
+        self.sliders[name] = components_slider
 
 

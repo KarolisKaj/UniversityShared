@@ -5,27 +5,34 @@ from Simulation.Monitoring.Monitoring import Monitoring
 from Simulation.Monitoring.MonitoringRule import MonitoringRule
 from Simulation.Extensions.ComponentExtensions import *
 from Simulation.Constants.Constants import default_monitoring_interval, simulation_duration
+from Simulation.Data.DataStore import *
 
 class SimulationBootStrapper(object):
     def __init__(self, vertices, edges, subgraphs):
         print("-----Initiliazing Bootstrapper-----")
         
-        self.vertices = vertices
-        self.edges = edges
-        self.subgraphs = subgraphs
+        global stored_vertices 
+        stored_vertices = vertices
+        global stored_edges 
+        stored_edges = edges
+        global stored_subgraphs 
+        stored_subgraphs = subgraphs
 
-        self.stores = dict()
+        stored_stores = dict()
 
         self.dataGrid = None
 
     def run_sim_handle(self):
         self.env = simpy.Environment()
 
-        components = create_components(self.edges, self.env, self.stores)
-        for index in components:
-            [self.env.process(component.run()) for component in components[index]]
+        global stored_attributes 
+        stored_attributes = get_attributes(stored_edges)
 
-        monitor = Monitoring([self.create_monitor_rule(store) for store in self.stores])
+        stored_components = create_components(stored_edges, self.env, stored_stores, stored_attributes)
+        for index in stored_components:
+            [self.env.process(component.run()) for component in stored_components[index]]
+
+        monitor = Monitoring([self.create_monitor_rule(store) for store in stored_stores])
         self.env.process(monitor.start_monitoring(lambda: self.env.timeout(default_monitoring_interval)))
 
         #TODO: Display adjustments;
@@ -38,8 +45,10 @@ class SimulationBootStrapper(object):
 
     def create_dataGrid(self, data):
         if(self.dataGrid is None):
-            self.dataGrid = DataGrid(self.run_sim_handle)
+            self.dataGrid = DataGrid()
             self.dataGrid.create_grid(data)
+        else: 
+            self.dataGrid.update_data(monitor.get_results())
 
     def create_monitor_rule(self, name):
-        return MonitoringRule(name, lambda: len(self.stores[name].items))
+        return MonitoringRule(name, lambda: len(stored_stores[name].items))
