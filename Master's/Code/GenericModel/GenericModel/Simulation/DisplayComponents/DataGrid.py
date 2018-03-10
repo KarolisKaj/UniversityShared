@@ -1,6 +1,8 @@
 import matplotlib
+
 from matplotlib import pyplot as plt
 from matplotlib.widgets import Slider, Button
+
 from Simulation.DisplayComponents.DiscreteSlider import DiscreteSlider
 
 class DataGrid(object):
