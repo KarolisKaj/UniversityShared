@@ -1,6 +1,6 @@
 graph TB
-gamintojas!to10!dr0.1[producer]-->buferis1
+gamintojas!to100!dr0.1[producer]-->buferis1
     subgraph komponentas
-    buferis1[buferis]-->procesorius1!to5[procesorius]
+    buferis1[buferis]-->procesorius1!to5!cl5[procesorius]
     end
-procesorius1!to5-->agregatorius!to6
+procesorius1!to5!cl5-->agregatorius!to1

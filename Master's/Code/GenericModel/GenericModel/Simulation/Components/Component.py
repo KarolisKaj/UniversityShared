@@ -24,6 +24,9 @@ class Component(object):
     def get_name(self):
         return self.name
 
+    def get_attrbutes(self):
+        return self.attributes
+
     def model_component(self, attributes):
         #for attribute in attributes:
         #    print(attribute)

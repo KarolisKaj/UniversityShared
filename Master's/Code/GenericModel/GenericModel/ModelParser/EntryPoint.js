@@ -3,15 +3,19 @@ function runParsing() {
     var mermaid = require('./mermaid');
     mermaid.initialize({ theme: 'forest' });
     console.log('Mermaid Instance Created!');
+    console.log("");
 
 
     console.log('Reading Model From File...');
     const fs = require('fs');
     var contents = fs.readFileSync('../Systems.Diagrams/MapReduce/SimplifiedExample.txt', 'utf8');
     console.log('Model read!');
+    console.log("");
+
     console.log("-----------------MODEL--------------------");
     console.log(contents);
     console.log("-----------------MODEL--------------------");
+    console.log("");
 
     console.log('Parsing Model...');
     var parsedGraph = mermaid.parse(contents);

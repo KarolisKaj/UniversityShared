@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>cfb10348-031d-4c6d-91d8-6214074658c2</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Simulation\Components\AttributeRules.py</StartupFile>
+    <StartupFile>EntryPoint.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -26,6 +26,12 @@
     </Compile>
     <Compile Include="MapReduce.py" />
     <Compile Include="Simulation\Components\AttributeRules.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Simulation\Constants\Constants.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Simulation\Extensions\ComponentExtensions.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Simulation\SimulationBootStrapper.py">
@@ -53,13 +59,13 @@
     <Folder Include="Simulation\Components\" />
     <Folder Include="Simulation\Extensions\" />
     <Folder Include="Simulation\Monitoring\" />
+    <Folder Include="Simulation\Constants\" />
     <Folder Include="Systems.Diagrams\" />
     <Folder Include="Systems.Diagrams\MapReduce\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ModelParser\EntryPoint.js" />
     <Content Include="ModelParser\mermaid.js" />
-    <Content Include="readme.md" />
     <Content Include="requirements.txt" />
     <Content Include="Simulation\Monitoring\Monitoring.py">
       <SubType>Code</SubType>
