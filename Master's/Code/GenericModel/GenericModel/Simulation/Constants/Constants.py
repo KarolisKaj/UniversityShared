@@ -3,7 +3,7 @@ death_rate = 'dr'
 time_out = 'to'
 
 default_timeout = 10
-default_monitoring_interval = 5
+default_monitoring_interval = 10
 simulation_duration = 1000
 
 startNode = "start"
