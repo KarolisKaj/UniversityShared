@@ -1,3 +1,5 @@
 graph TB
 gamintojas!to10!dr0.1[producer]-->procesorius1!to50!cl2[procesorius]
 procesorius1!to50!cl2-->agregatorius!to10
+agregatorius!to10-->proceso!to50!cl2
+proceso!to50!cl2-->agregatori!to10

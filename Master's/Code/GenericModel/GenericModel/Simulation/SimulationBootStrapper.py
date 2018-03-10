@@ -17,17 +17,18 @@ class SimulationBootStrapper(object):
         stored_edges = edges
         global stored_subgraphs 
         stored_subgraphs = subgraphs
+        
+        global stored_attributes
+        stored_attributes = get_attributes(stored_edges)
 
         stored_stores = dict()
-
+        
         self.dataGrid = None
 
     def run_sim_handle(self):
         self.env = simpy.Environment()
 
-        global stored_attributes 
-        stored_attributes = get_attributes(stored_edges)
-
+        global stored_components
         stored_components = create_components(stored_edges, self.env, stored_stores, stored_attributes)
         for index in stored_components:
             [self.env.process(component.run()) for component in stored_components[index]]
@@ -41,7 +42,16 @@ class SimulationBootStrapper(object):
         self.env.run(until=simulation_duration)
         self.create_dataGrid(monitor.get_results())
 
+        for component in stored_components:
+            print(stored_attributes[component])
+            print(stored_components[component])
+            self.dataGrid.add_changeable_slider(component, (lambda x: self.assign(stored_attributes[name], "cl", int(x))))
+
+        self.dataGrid.show_grid()
         print("Finished simulation. Waiting for events...")
+
+    def assign(self, dic, name, value):
+        dic[name] = value
 
     def create_dataGrid(self, data):
         if(self.dataGrid is None):
