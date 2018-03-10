@@ -1,29 +1,19 @@
 import simpy
-import re
 
 from Simulation.DisplayComponents.DataGrid import DataGrid
-from Simulation.Components.Component import Component
 from Simulation.Monitoring.Monitoring import Monitoring
 from Simulation.Monitoring.MonitoringRule import MonitoringRule
-from Simulation.Extensions.RandomValueGenEx import *
 from Simulation.Extensions.ComponentExtensions import *
-
-default_timeout = 10
 
 class SimulationBootStrapper(object):
     def __init__(self, vertices, edges, subgraphs):
         print("-----Initiliazing Bootstrapper-----")
         
-        self.startNode = "start"
-        self.endNode = "end"
-        self.linkText = "text"
-
         self.vertices = vertices
         self.edges = edges
         self.subgraphs = subgraphs
 
         self.stores = dict()
-        
 
     def run_sim_handle(self):
         self.env = simpy.Environment()
@@ -33,7 +23,7 @@ class SimulationBootStrapper(object):
             [self.env.process(component.run()) for component in components[index]]
 
         monitor = Monitoring([self.create_monitor_rule(store) for store in self.stores])
-        self.env.process(monitor.start_monitoring(lambda: self.env.timeout(2)))
+        self.env.process(monitor.start_monitoring(lambda: self.env.timeout(5)))
 
         #TODO: Display adjustments;
             #TODO: Events on invoked
