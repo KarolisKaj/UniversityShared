@@ -28,7 +28,6 @@ class SimulationBootStrapper(object):
         stored_stores = dict()
         self.env = simpy.Environment()
 
-        print(stored_stores)
         global stored_components
         stored_components = create_components(stored_edges, self.env, stored_stores, stored_attributes)
         for index in stored_components:
@@ -37,30 +36,11 @@ class SimulationBootStrapper(object):
         monitor = Monitoring([self.create_monitor_rule(store) for store in stored_stores])
         self.env.process(monitor.start_monitoring(lambda: self.env.timeout(default_monitoring_interval)))
 
-        #TODO: Display adjustments;
-            #TODO: Events on invoked
-
         self.env.run(until=simulation_duration)
         self.create_dataGrid(monitor.get_results())
-        #for component in stored_components:
-        #    self.dataGrid.add_changeable_slider(component, lambda x: self.assign(stored_attributes[component], "cl", int(x)), 4)
 
         print("Finished simulation...")
         self.dataGrid.show_grid()
-
-    def create_dataGrid_dynamic_sliders(self):
-        for component in stored_attributes:
-            for attribute in stored_attributes[component]:
-                self.create_slider(component, attribute)
-                
-    def create_slider(self, component, attribute):
-        if(attribute == clone_attribute):
-            self.dataGrid.add_changeable_slider(component + clone_attribute, lambda x: self.assign(component, clone_attribute, int(x)), int(stored_attributes[component][clone_attribute]))
-
-    def assign(self, component, name, value):
-        global stored_attributes
-        stored_attributes[component][name] = value
-        self.run_sim()
 
     def create_dataGrid(self, data):
         if(self.dataGrid is None):
@@ -69,6 +49,20 @@ class SimulationBootStrapper(object):
             self.create_dataGrid_dynamic_sliders()
         else: 
             self.dataGrid.update_data(data)
+
+    def create_dataGrid_dynamic_sliders(self):
+        for component in stored_attributes:
+            for attribute in stored_attributes[component]:
+                self.create_slider(component, attribute)
+                
+    def create_slider(self, component, attribute):
+        if(attribute == clone_attribute):
+            self.dataGrid.add_changeable_slider(component + clone_attribute, lambda x: self.update_handle(component, clone_attribute, int(x)), int(stored_attributes[component][clone_attribute]))
+            
+    def update_handle(self, component, name, value):
+        global stored_attributes
+        stored_attributes[component][name] = value
+        self.run_sim()
 
     def create_monitor_rule(self, name):
         return MonitoringRule(name, lambda: len(stored_stores[name].items))
