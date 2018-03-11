@@ -40,13 +40,13 @@ class SimulationBootStrapper(object):
         self.create_dataGrid(monitor.get_results())
 
         print("Finished simulation...")
-        self.dataGrid.show_grid()
 
     def create_dataGrid(self, data):
         if(self.dataGrid is None):
             self.dataGrid = DataGrid()
             self.dataGrid.create_grid(data)
             self.create_dataGrid_dynamic_sliders()
+            self.dataGrid.show_grid()
         else: 
             self.dataGrid.update_data(data)
 
