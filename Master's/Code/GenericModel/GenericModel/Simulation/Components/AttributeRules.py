@@ -1,3 +1,8 @@
 import random
 
-attribute_actions = dict([('dr', lambda rate: random.random() < rate)])
+from Simulation.Constants.Constants import *
+
+attribute_actions = dict([
+    (death_rate, lambda rate: random.random() < rate),
+    (recovery_rate, lambda rate: random.random() < rate)
+    ])

@@ -1,4 +1,6 @@
 from Simulation.Components.AttributeRules import attribute_actions
+from Simulation.Components.ComponentState import *
+from Simulation.Constants.Constants import *
 
 class Component(object):
     def __init__(self, name, attributes):
@@ -9,10 +11,17 @@ class Component(object):
         self.model_component(self.attributes)
         self.timeout_action = None
 
+        self.component_state = ComponentState.Undefined
+        self.recovery_rate_handle = None
+        self.death_rate_handle = None
+
     def run(self):
         while True:
-            for action in self.actions: 
-                action()
+            self.component_state = self.new_state()
+            print(self.component_state)
+            if(self.component_state != ComponentState.Dead):
+                for action in self.actions: 
+                    action()
             yield self.timeout_action()
 
     def add_action(self, action):
@@ -28,9 +37,11 @@ class Component(object):
         return self.attributes
 
     def model_component(self, attributes):
-        #for attribute in attributes:
-        #    print(attribute)
-        pass
+        if(recovery_rate in attributes):
+            self.recovery_rate_handle = lambda : attribute_actions[recovery_rate](attributes[recovery_rate])
+        
+        if(death_rate in attributes):
+            self.death_rate_handle = lambda : attribute_actions[death_rate](attributes[death_rate])
 
     def clone(self):
         component = Component(self.get_name(), self.attributes)
@@ -39,3 +50,13 @@ class Component(object):
             component.add_action(action)
          
         return component
+
+    def new_state(self):
+        if(self.recovery_rate_handle == None and self.death_rate_handle == None): return ComponentState.Alive
+
+        if(self.component_state == ComponentState.Dead):
+            if(self.recovery_rate_handle == None): return ComponentState.Dead
+            return ComponentState.Alive if self.recovery_rate_handle() else ComponentState.Dead;
+        else:
+            if(self.death_rate_handle == None): return ComponentState.Alive;
+            return ComponentState.Dead if self.death_rate_handle() else ComponentState.Alive;

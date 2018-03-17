@@ -37,6 +37,7 @@ class SimulationBootStrapper(object):
         self.env.process(monitor.start_monitoring(lambda: self.env.timeout(default_monitoring_interval)))
 
         self.env.run(until=simulation_duration)
+        print("Simulation Finished...")
         self.create_dataGrid(monitor.get_results())
 
     def create_dataGrid(self, data):
