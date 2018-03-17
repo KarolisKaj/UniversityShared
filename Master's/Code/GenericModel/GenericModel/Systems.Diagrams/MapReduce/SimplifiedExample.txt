@@ -1,4 +1,4 @@
 graph TB
-g!cl1!to10-->a!cl1!to50
-a!cl1!to50-->b!cl1!to10
+g!cl1!to10-->a!cl1!to50!dr0.9
+a!cl1!to50!dr0.9-->b!cl1!to10
 b!cl1!to10-->c!cl1!to10
