@@ -39,8 +39,6 @@ class SimulationBootStrapper(object):
         self.env.run(until=simulation_duration)
         self.create_dataGrid(monitor.get_results())
 
-        print("Finished simulation...")
-
     def create_dataGrid(self, data):
         if(self.dataGrid is None):
             self.dataGrid = DataGrid()

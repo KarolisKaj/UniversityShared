@@ -32,24 +32,23 @@ class DataGrid(object):
             p1, = ax.plot(data[metric])
             self.parameters.append(p1) 
 
-        fig.canvas.draw_idle()
-
-        fig.legend(self.parameters, [metric for metric in data], loc='upper left')
+        self.fig.legend(self.parameters, [metric for metric in data], loc='upper left')
 
     def update_data(self, data):
         for param, metric in zip(self.parameters, data):
             param.set_ydata(data[metric])
 
+        self.fig.canvas.draw_idle()
+
     def add_changeable_slider(self, name, handle, default_value):
         components_axes = plt.axes(self.calculate_slider_coordinates())
         
         components_slider = DiscreteSlider(components_axes, name, 1, 10, valinit=default_value)
-        components_slider.on_changed(handle)
-        
         self.main_plot_bottom = self.main_plot_bottom + self.main_plot_bottom_step
 
         plt.subplots_adjust(left=0.25, bottom=self.main_plot_bottom)
 
+        components_slider.on_changed(handle)
         self.sliders[name] = components_slider
 
     def calculate_slider_coordinates(self):
