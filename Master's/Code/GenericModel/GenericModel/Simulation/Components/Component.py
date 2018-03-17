@@ -21,7 +21,7 @@ class Component(object):
             self.component_state = self.new_state()
             if(self.component_state != ComponentState.Dead):
                 for action in self.actions: 
-                    action()
+                    yield action()
             yield self.timeout_action()
 
     def add_action(self, action):

@@ -28,7 +28,7 @@ def clone_components(components):
 def clone_component(component):
     components = [component]
     attributes = component.get_attrbutes()
-    for index in range((int(attributes[clone_attribute]) - 1) if clone_attribute in attributes else 0):
+    for _ in range((int(attributes[clone_attribute]) - 1) if clone_attribute in attributes else 0):
         components.append(component.clone())
     
     return components
