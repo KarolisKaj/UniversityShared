@@ -1,0 +1,20 @@
+graph TB
+Komponentas1-->Komponentas2
+Komponentas2-->Komponentas3
+Komponentas3--> VidinisKomponentas1
+subgraph Komponentas4
+    VidinisKomponentas1-->VidinisKomponentas2
+    VidinisKomponentas1-->VidinisKomponentas3
+    VidinisKomponentas2-->VidinisKomponentas3
+end
+VidinisKomponentas3--> Komponentas10
+
+Komponentas1-->Komponentas5
+Komponentas5-->Komponentas10
+
+Komponentas1-->Komponentas6
+Komponentas6-->Komponentas7
+Komponentas7-->Komponentas8
+Komponentas7-->Komponentas9
+Komponentas9-->Komponentas10
+Komponentas8-->Komponentas10
