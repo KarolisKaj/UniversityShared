@@ -10,11 +10,11 @@ end
 VidinisKomponentas3--> Komponentas10
 
 Komponentas1-->Komponentas5
-Komponentas5-->Komponentas10
+Komponentas5-->Komponentas11
 
 Komponentas1-->Komponentas6
 Komponentas6-->Komponentas7
 Komponentas7-->Komponentas8
 Komponentas7-->Komponentas9
-Komponentas9-->Komponentas10
-Komponentas8-->Komponentas10
+Komponentas9-->Komponentas12
+Komponentas8-->Komponentas12

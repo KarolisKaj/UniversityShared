@@ -77,6 +77,7 @@
     <Content Include="Simulation\Monitoring\Monitoring.py">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="Systems.Diagrams\MapReduce\exampleWithAttributes.txt" />
     <Content Include="Systems.Diagrams\MapReduce\example.txt" />
     <Content Include="Systems.Diagrams\MapReduce\MapReduce.svg" />
     <Content Include="Systems.Diagrams\MapReduce\MapReduce.txt" />
